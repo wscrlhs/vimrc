@@ -1,3 +1,5 @@
+"
+"
 " File: .vimrc
 "
 "
@@ -38,16 +40,38 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'spf13/vim-colors'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" 设置状态栏主题风格
+let g:airline_theme='solarized'
+
+" Must be first line
+set nocompatible     
 
 " 配色方案
-" set background=dark
-" colorscheme solarized
-"colorscheme molokai
-"colorscheme phd
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+" Load a colorscheme
+color solarized        
 
 
 " 禁止光标闪烁
@@ -84,9 +108,6 @@ set guifont=YaHei\ Consolas\ Hybrid\ 10.5
 
 " 禁止折行
 set nowrap
-
-" 设置状态栏主题风格
-let g:Powerline_colorscheme='solarized256'
 
 " 开启语法高亮功能
 syntax enable
