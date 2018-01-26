@@ -40,8 +40,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'spf13/vim-colors'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'spf13/vim-colors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
