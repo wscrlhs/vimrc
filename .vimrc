@@ -6,7 +6,7 @@
 
 
 " 定义快捷键的前缀，即 <Leader>
-let mapleader=";"
+let mapleader=","
 
 " 开启文件类型侦测
 filetype on
@@ -60,6 +60,7 @@ filetype plugin indent on
 
 " 设置状态栏主题风格
 let g:airline_theme='solarized'
+" let g:airline_powerline_fonts=1
 
 " Must be first line
 set nocompatible     
@@ -103,9 +104,6 @@ set cursorline
 " 高亮显示搜索结果
 set hlsearch
 
-" 设置 gvim 显示字体
-set guifont=YaHei\ Consolas\ Hybrid\ 10.5
-
 " 禁止折行
 set nowrap
 
@@ -132,5 +130,15 @@ set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable
 
+" 设置 vim 显示字体  
+set guifont=YaHei\ Consolas\ Hybrid\ 11.5
+set shell=/bin/zsh
 
+"编码转gbk
+nmap <leader>gbk :e ++enc=gbk<CR>
+nmap <leader>utf :e ++enc=utf-8<CR>
+
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+
+let g:neocomplete#enable_at_startup = 1
 
