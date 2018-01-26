@@ -60,6 +60,10 @@ filetype plugin indent on
 
 " 设置状态栏主题风格
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
 
 " Must be first line
 set nocompatible     
@@ -71,7 +75,8 @@ let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 " Load a colorscheme
-color solarized        
+colorscheme solarized
+
 
 
 " 禁止光标闪烁
