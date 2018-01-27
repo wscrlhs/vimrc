@@ -14,7 +14,7 @@ filetype on
 filetype plugin on
 
 " 定义快捷键在结对符之间跳转
-nmap <Leader>M %
+nmap <Leader>m %
 
 " 让配置变更立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
