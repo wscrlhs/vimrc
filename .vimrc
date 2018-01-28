@@ -5,10 +5,6 @@
 "==================================
 
 
-
-
-
-
 "==================================
 "
 " Basic 基本配置    
@@ -46,7 +42,6 @@
 
     " vim 自身命令行模式智能补全
     set wildmenu
-
 
     " 禁止光标闪烁
     set gcr=a:block-blinkon0
@@ -115,6 +110,13 @@
     nmap <leader>gbk :e ++enc=gbk<CR>
     nmap <leader>utf :e ++enc=utf-8<CR>
     set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+
+    "多窗口操作
+    map <C-J> <C-W>j<C-W>_
+    map <C-K> <C-W>k<C-W>_
+    map <C-L> <C-W>l<C-W>_
+    map <C-H> <C-W>h<C-W>_
+
 
 " }
 
