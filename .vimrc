@@ -104,7 +104,6 @@
 
     " 设置 vim 显示字体  
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
-    set shell=/bin/zsh
 
     "编码转gbk
     nmap <leader>gbk :e ++enc=gbk<CR>
