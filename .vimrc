@@ -108,7 +108,14 @@
     "编码转gbk
     nmap <leader>gbk :e ++enc=gbk<CR>
     nmap <leader>utf :e ++enc=utf-8<CR>
-    set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+    "set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+
+    "编码设置
+    set enc=utf-8
+    set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+    "语言设置
+    set langmenu=zh_CN.UTF-8
+    set helplang=cn
 
     "多窗口操作
     map <C-J> <C-W>j<C-W>_
@@ -140,7 +147,7 @@
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'
     Plugin 'Xuyuanp/nerdtree-git-plugin'
-
+    Plugin 'bsdelf/bufferhint'
 
     " 插件列表结束
     call vundle#end()
@@ -167,6 +174,8 @@
         " Put your non-Plugin stuff after this line
 
     " }
+    "
+
 
     " airline {
     
@@ -223,4 +232,13 @@
             \ }
 
     " }
+    
+
+    " bufferhint {
+    
+       nnoremap - :call bufferhint#Popup()
+       nnoremap \ :call bufferhint#LoadPrevious()
+
+    " }
+
 " }
