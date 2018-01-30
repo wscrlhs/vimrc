@@ -1,11 +1,11 @@
-"==================================
+"Bundle ==================================
 "
 " File: .vimrc
 "
 "==================================
 
 
-"==================================
+"Bundle ==================================
 "
 " Basic 基本配置    
 "
@@ -147,7 +147,8 @@
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'
     Plugin 'Xuyuanp/nerdtree-git-plugin'
-    Plugin 'bsdelf/bufferhint'
+    Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'tacahiroy/ctrlp-funky'
 
     " 插件列表结束
     call vundle#end()
@@ -234,11 +235,20 @@
     " }
     
 
-    " bufferhint {
-    
-       nnoremap - :call bufferhint#Popup()
-       nnoremap \ :call bufferhint#LoadPrevious()
 
-    " }
+    " ctrlp {
+        let g:ctrlp_working_path_mode = 'ra'
+        nnoremap <silent> <C-p> :CtrlP<CR>
+        nnoremap <silent> <C-m> :CtrlPMRU<CR>
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+        " CtrlP extensions
+        let g:ctrlp_extensions = ['funky']
+
+        "funky
+        nnoremap <Leader>fu :CtrlPFunky<Cr>
+
+    "}
 
 " }
