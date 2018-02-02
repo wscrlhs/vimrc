@@ -109,6 +109,11 @@
     set langmenu=zh_CN.UTF-8
     set helplang=cn
 
+    "设置自动折行
+    set wrap 
+    "设置不自动折行
+    "set nowrap 
+
     "多窗口操作
     map <C-J> <C-W>j<C-W>_
     map <C-K> <C-W>k<C-W>_
