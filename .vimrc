@@ -14,6 +14,7 @@
 
     "通过9跳转到行末尾,0默认跳转到行首"
     map 9 $
+
     "Ctrl-A 选中所有内容"
     map <silent>  <C-A>  gg v G 
 
@@ -68,7 +69,9 @@
     set hlsearch
 
     " 禁止折行
-    set nowrap
+    "set nowrap
+    "设置自动折行
+    set wrap 
 
     " 开启语法高亮功能
     syntax enable
@@ -87,13 +90,6 @@
     " 让 vim 把连续数量的空格视为一个制表符
     set softtabstop=4
 
-    " 基于缩进或语法进行代码折叠
-    "set foldmethod=indent
-    set foldmethod=syntax
-
-    " 启动 vim 时关闭折叠代码
-    set nofoldenable
-
     " 设置 vim 显示字体  
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
 
@@ -109,10 +105,17 @@
     set langmenu=zh_CN.UTF-8
     set helplang=cn
 
-    "设置自动折行
-    set wrap 
-    "设置不自动折行
-    "set nowrap 
+    "启动 vim 时折叠代码
+    set foldenable 
+    "启动 vim 时关闭折叠代码
+    "set nofoldenable
+    "基于缩进或语法进行代码折叠
+    set foldmethod=indent
+    "set foldmethod=syntax
+    "设置折叠标志宽度
+    set foldcolumn =1
+    "指定折叠缩进级别
+    "set foldlevel=0
 
     "多窗口操作
     map <C-J> <C-W>j<C-W>_
