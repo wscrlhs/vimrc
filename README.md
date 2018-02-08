@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [基础操作](#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C)
+- [进阶](#%E8%BF%9B%E9%98%B6)
+- [文件间切换](#%E6%96%87%E4%BB%B6%E9%97%B4%E5%88%87%E6%8D%A2)
+- [折叠](#%E6%8A%98%E5%8F%A0)
+- [自定义快捷键](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)
+- [NERDtree](#nerdtree)
+- [NERDCOMMENTER](#nerdcommenter)
+- [CtrlP 和 Ctrlp-funky](#ctrlp-%E5%92%8C-ctrlp-funky)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## 基础操作
 | 快捷键                | 功能说明                   |
