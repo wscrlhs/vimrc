@@ -12,14 +12,14 @@
 "==================================
 " {
 
-    "通过9跳转到行末尾,0默认跳转到行首"
-    map 9 $
-
-    "Ctrl-A 选中所有内容"
-    map <silent>  <C-A>  gg v G 
-
     " 定义快捷键的前缀，即 <Leader>
     let mapleader=","
+
+    "通过9跳转到行末尾,0默认跳转到行首
+    map 9 $
+
+    "Ctrl-A 选中所有内容
+    map <silent>  <Leader>a  gg v G 
 
     " 定义快捷键在结对符之间跳转
     nmap <Leader>m %
