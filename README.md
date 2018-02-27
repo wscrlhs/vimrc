@@ -9,14 +9,14 @@
   - [文件](#%E6%96%87%E4%BB%B6)
   - [折叠](#%E6%8A%98%E5%8F%A0)
   - [自定义快捷键](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)
-- [vimscript](#vimscript)
+- [Vimscript](#vimscript)
   - [基础](#%E5%9F%BA%E7%A1%80-1)
   - [示例](#%E7%A4%BA%E4%BE%8B)
 - [插件](#%E6%8F%92%E4%BB%B6)
   - [NERDtree](#nerdtree)
   - [NERDCOMMENTER](#nerdcommenter)
   - [CtrlP 和 Ctrlp-funky](#ctrlp-%E5%92%8C-ctrlp-funky)
-  - [参考](#%E5%8F%82%E8%80%83)
+- [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -110,7 +110,7 @@
 | `<leader>gbk`   |    编码转gbk               |
 | `<leader>utf`   |    编码转utf-8             |
 
-# vimscript
+# Vimscript
 ## 基础
 | 快捷键                | 功能说明                   |
 | --------------------- | -------------------------- |
@@ -161,7 +161,7 @@ Ctrlp-funky是Ctrlp的扩展
 
 
 
-## 参考 
+# 参考 
 [vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)  
 [简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)  
 [笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)  
