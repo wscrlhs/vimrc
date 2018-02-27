@@ -132,3 +132,8 @@ Ctrlp-funky是Ctrlp的扩展
 | `C-n, C-p`       | 在查找历史字符串中选择一个字符串            |
 
 
+
+## 参考 
+[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)
+[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)
+[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)
