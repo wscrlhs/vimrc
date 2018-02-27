@@ -3,7 +3,10 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [基础操作](#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C)
-- [进阶](#%E8%BF%9B%E9%98%B6)
+- [进阶操作I](#%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9Ci)
+- [示例](#%E7%A4%BA%E4%BE%8B)
+- [设置选项](#%E8%AE%BE%E7%BD%AE%E9%80%89%E9%A1%B9)
+- [映射](#%E6%98%A0%E5%B0%84)
 - [文件间切换](#%E6%96%87%E4%BB%B6%E9%97%B4%E5%88%87%E6%8D%A2)
 - [折叠](#%E6%8A%98%E5%8F%A0)
 - [自定义快捷键](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)
@@ -39,7 +42,7 @@
 | `:x , ZZ 或:wq`         |  保存并退出     |
 | `q!`                    |  退出不保存     |
 
-## 进阶
+## 进阶操作I
 | 快捷键                | 功能说明                   |
 | --------------------- | -------------------------- |
 | `.`                   |  重复上一次的命令     |
@@ -66,6 +69,28 @@
 | `=`                   |  自动给缩进 （     |
 | `:split`              |   创建分屏     |
 | `:vsplit`             |  创建垂直分屏     |
+
+## 示例
+| 快捷键                | 功能说明                   |
+| --------------------- | -------------------------- |
+| `nnoremap <space> viw`     | 高亮选中整个单词|
+|        |         |
+
+## 设置选项
+| 快捷键                | 功能说明                   |
+| --------------------- | -------------------------- |
+| `" this is annotation line`   | 添加注释 |
+| `set number/nonumber`   |  显示/关闭行号   |
+|        |         |
+
+## 映射 
+| 快捷键                | 功能说明                   |
+| --------------------- | -------------------------- |
+| `map/unmap`             |  基本映射(增加/删除)    |
+| `nmap/vmap/imap`        |  模式映射(仅在`normal/visual/insert`模式有效)      |
+| `*noremap`              |  非递归映射(与`*map`系列的命令对应)  |
+|        |         |
+
 
 ## 文件间切换  
 | 快捷键   | 功能说明               |
@@ -135,6 +160,6 @@ Ctrlp-funky是Ctrlp的扩展
 
 
 ## 参考 
-[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)
-[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)
-[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)
+[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)  
+[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)  
+[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)  
