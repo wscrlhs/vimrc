@@ -106,14 +106,14 @@
     set helplang=cn
 
     "启动 vim 时折叠代码
-    set foldenable 
+    "set foldenable 
     "启动 vim 时关闭折叠代码
     "set nofoldenable
     "基于缩进或语法进行代码折叠
-    set foldmethod=indent
+    "set foldmethod=indent
     "set foldmethod=syntax
     "设置折叠标志宽度
-    set foldcolumn =1
+    "set foldcolumn =1
     "指定折叠缩进级别
     "set foldlevel=0
 
