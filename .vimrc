@@ -123,12 +123,38 @@
     map <C-L> <C-W>l<C-W>_
     map <C-H> <C-W>h<C-W>_
 
+    " 换回快捷键
+    inoremap jk <esc>l
+
 
 " }
 
+"==================================
+"
+" 高级配置
+"
+" =================================
+" {
+"
+    " 快速编辑vimrc文件
+    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+    " 重新加载vimrc文件
+    nnoremap <leader>sv :source $MYVIMRC<cr>
+
+    " 单词两边包围字符
+    nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+    nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+    nnoremap <leader>< viw<esc>a><esc>hbi<<esc>lel
+    nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
+    nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
+    nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
+    nnoremap <leader>** viw<esc>a**<esc>hbi**<esc>lel
 
 
-"===================================
+
+"  }
+
+"==================================
 "
 "  插件管理
 "
