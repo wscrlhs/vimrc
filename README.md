@@ -15,7 +15,7 @@
 - [插件](#%E6%8F%92%E4%BB%B6)
   - [NERDtree](#nerdtree)
   - [NERDCOMMENTER](#nerdcommenter)
-  - [CtrlP 和 Ctrlp-funky](#ctrlp-%E5%92%8C-ctrlp-funky)
+  - [CtrlP , Ctrlp-funky](#ctrlp--ctrlp-funky)
 - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -50,7 +50,7 @@
 | 快捷键                | 功能说明                   |
 | --------------------- | -------------------------- |
 | `.`                   |  重复上一次的命令     |
-| `N<comand>`           |  重复某个命令N次(2dd → 删除2行 100idesu [ESC] → 插入100次desu )    |
+| `N<command>`           |  重复某个命令N次(2dd → 删除2行 100idesu [ESC] → 插入100次desu )    |
 | `NG`                  |  到第N行     |
 | `gg`                  |  到第一行     |
 | `G`                   |   到最后一行    |
@@ -59,18 +59,18 @@
 | `%`                   |   匹配括号移动    |
 | `*`                   |    移动光标到下一个匹配单词   |
 | `#`                   |   移动光标到上一个匹配单词    |
-| `gU`                  |  (变大写)     |
-| `gu`                  |    (变小写)|
+| `gU`                  |  变大写                |
+| `gu`                  |    变小写              |
 | `<start position><command><end position>` |  0y$     |
 | `fa`                  |  到下一个为a的字符处     |
 | `dt"`                 |  删除所有的内容，直到遇到双引号     |
 | `<action>[a,i]<object>`  |  viw     |
-| `<C-v>`               | <C-v> 选择区块 I <action>     |
-| `<C-n> 和 <C-p>`      |  自动提示 |
+| `<C-v>`               |  选择区块      |
+| `<C-n>` , `<C-p>`      |  自动提示 |
 | `qa`                  |  把你的操作记录在寄存器 a ;qa 开始,q 停止,@a 播放宏a    |
 | `J`                   |   把所有的行连接起来（变成一行） |
-| `< 或 >`              |  左右缩进|
-| `=`                   |  自动给缩进 （     |
+| `<` , `>`              |  左右缩进|
+| `=`                   |  自动给缩进      |
 | `:split`              |   创建分屏     |
 | `:vsplit`             |  创建垂直分屏     |
 
@@ -149,15 +149,15 @@
 | `<leader>cy`          | 先复制, 再注解(p可以进行黏贴) |
 
 
-## [CtrlP](https://github.com/kien/ctrlp.vim) 和 [Ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky)
+## [CtrlP](https://github.com/kien/ctrlp.vim) , [Ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky)
 Ctrlp-funky是Ctrlp的扩展
 
 | 快捷键         | 功能说明                                    |
 | -------------- | ------------------------------------------- |
 | `<C-p>`            | 启动文件查找功能，后续的所有操作都要使用这个操作   |
-| `<C-f> ,<C-b>`     | 在files/buf/mru files/funky中来回切换       |
+| `<C-f>` , `<C-b>`     | 在files/buf/mru files/funky中来回切换       |
 | `<C-d>`            | 只查找文件名，而不是全路径                  |
-| `<C-j> , <C-k>`    | 在查找列表中上下切换            |
+| `<C-j>` , `<C-k>`    | 在查找列表中上下切换            |
 
 
 
