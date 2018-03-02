@@ -16,13 +16,10 @@
     let mapleader=","
 
     "通过9跳转到行末尾,0默认跳转到行首
-    map 9 $
-
-    "Ctrl-A 选中所有内容
-    map <silent>  <Leader>a  gg v G 
+    noremap 9 $
 
     " 定义快捷键在结对符之间跳转
-    nmap <Leader>m %
+    noremap <Leader>m %
 
     " 让配置变更立即生效
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -93,11 +90,6 @@
     " 设置 vim 显示字体  
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
 
-    "编码转gbk
-    nmap <leader>gbk :e ++enc=gbk<CR>
-    nmap <leader>utf :e ++enc=utf-8<CR>
-    "set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
-
     "编码设置
     set enc=utf-8
     set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
@@ -116,12 +108,6 @@
     "set foldcolumn =1
     "指定折叠缩进级别
     "set foldlevel=0
-
-    "多窗口操作
-    map <C-J> <C-W>j<C-W>_
-    map <C-K> <C-W>k<C-W>_
-    map <C-L> <C-W>l<C-W>_
-    map <C-H> <C-W>h<C-W>_
 
     " 换回快捷键
     inoremap jk <esc>l
@@ -150,6 +136,20 @@
     nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
     nnoremap <leader>** viw<esc>a**<esc>hbi**<esc>lel
 
+    "编码转gbk
+    noremap <leader>gbk :e ++enc=gbk<CR>
+    noremap <leader>utf :e ++enc=utf-8<CR>
+    "set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+
+    "Ctrl-A 选中所有内容
+    noremap <silent>  <Leader>a  gg v G 
+    "多窗口操作
+    noremap <C-J> <C-W>j<C-W>_
+    noremap <C-K> <C-W>k<C-W>_
+    noremap <C-L> <C-W>l<C-W>_
+    noremap <C-H> <C-W>h<C-W>_
+
+
 
 
 "  }
@@ -168,12 +168,12 @@
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'altercation/vim-colors-solarized'
-    Plugin 'spf13/vim-colors'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'Xuyuanp/nerdtree-git-plugin'
+    Plugin 'airblade/vim-gitgutter'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'tacahiroy/ctrlp-funky'
 
