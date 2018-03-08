@@ -21,6 +21,8 @@
   - [NERDtree](#nerdtree)
   - [NERDCOMMENTER](#nerdcommenter)
   - [CtrlP , Ctrlp-funky](#ctrlp--ctrlp-funky)
+  - [vim-fugitive](#vim-fugitive)
+  - [vim-easymotion](#vim-easymotion)
 - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -246,6 +248,33 @@ Ctrlp-funky是Ctrlp的扩展
 | `<C-d>`                    | 只查找文件名，而不是全路径                  |
 | `<C-j>` , `<C-k>`          | 在查找列表中上下切换            |
 
+### [vim-fugitive](https://github.com/tpope/vim-fugitive)   
+| 快捷键                     | 功能说明                                    |
+| -------------------------- | ------------------------------------------- |
+| `Git <command>`            | `git <command>`                                |
+| `Gstatus`                  | `git status`                                |
+| `Gwrite`                   | `git add`                                |
+| `Gcommit`                  | `git commit`                                |
+| `Gremove`                  | `git rm`                                |
+| `Gmove`                    | `git mv`                                |
+| `Gread`                    | `git checkout -- filename`                  |
+| `Gdiff`                    | `git diff`                  |
+| `Gbalme`                   | `git blame`                  |
+| `Ggrep`                    | `git grep`                  |
+| `Glog`                     | `git log`                  |
+
+
+### [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+| 快捷键                     | 功能说明                                    |
+| -------------------------- | ------------------------------------------- |
+| `<leader><leader>w`        | 跳转到当前光标前位置                        |
+| `<leader><leader>b`        | 跳转到当前光标后位置                        |
+| `<leader><leader>s`        | 搜索跳转                                    |
+| `<leader><leader>j`        | 行级跳转下                                  |
+| `<leader><leader>k`        | 行级跳转上                                  |
+| `<leader><leader>h`        | 行级跳转左                                  |
+| `<leader><leader>l`        | 行级跳转右                                  |
+| `<leader><leader>.`        | 重复上一次动作                              |
 
 
 ## 参考 

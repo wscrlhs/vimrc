@@ -149,7 +149,12 @@
     noremap <C-L> <C-W>l<C-W>_
     noremap <C-H> <C-W>h<C-W>_
 
-
+    " For clever completion with the :find command
+    set path+=**
+    
+    " Search
+    set ignorecase smartcase
+    set grepprg=grep\ -IrsnH
 
 
 "  }
@@ -160,6 +165,8 @@
 "
 "==================================
 " {
+
+    set nocompatible     
 
     " vundle 环境设置
     filetype off
@@ -178,6 +185,8 @@
     Plugin 'tacahiroy/ctrlp-funky'
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'easymotion/vim-easymotion'
 
     " 插件列表结束
     call vundle#end()
@@ -217,7 +226,6 @@
 
     " }
     
-     set nocompatible     
 
     " vim-color {
     
@@ -278,5 +286,17 @@
         nnoremap <Leader>fu :CtrlPFunky<Cr>
 
     "}
+
+
+    " easymotion {
+        let g:EasyMotion_smartcase = 1
+        "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+        map <Leader><leader>h <Plug>(easymotion-linebackward)
+        map <Leader><Leader>j <Plug>(easymotion-j)
+        map <Leader><Leader>k <Plug>(easymotion-k)
+        map <Leader><leader>l <Plug>(easymotion-lineforward)
+        " 重复上一次操作, 类似repeat插件, 很强大
+        map <Leader><leader>. <Plug>(easymotion-repeat)
+     "}
 
 " }
