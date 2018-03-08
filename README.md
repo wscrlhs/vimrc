@@ -1,8 +1,7 @@
-# Vimrc
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## table-of-contents generated with [DocToc](https://github.com/thlorenz/doctoc)
+## table-of-contents 
+*generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [操作](#%E6%93%8D%E4%BD%9C)
   - [基础](#%E5%9F%BA%E7%A1%80)
@@ -75,6 +74,7 @@
 | `:e <path/to/file>`        | 打开文件                          |
 | `:saveas <path/to/file>`   | 另存为                            |
 | `:help <command>`          | 显示相关命令的帮助                |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 进阶
@@ -105,6 +105,7 @@
 | `:split`                   | 创建分屏                       |
 | `:vsplit`                  | 创建垂直分屏                   |
 | `:x , ZZ 或:wq`            | 保存并退出                     |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 更快
@@ -112,6 +113,7 @@
 | -------------------------- | -------------------------- |
 | `yt,`                      | 复制到逗号
 | `dt"`                      | 删除到双引号     |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 更强 
@@ -125,6 +127,7 @@
 | `<Leader>m`                | 在结对符之间跳转        |
 | `<leader>gbk`              | 编码转gbk               |
 | `<leader>utf`              | 编码转utf-8             |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ## 高级
@@ -138,6 +141,7 @@
 | `@@`                       | 重复上次的 @{a-z} 操作 (N 次) |
 | `:@{a-z}`                  | 将寄存器 {a-z} 的内容当作 Ex 命令来执行 |
 | `:@@`                      | 重复上次的 :@{a-z} 操作  |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 文件
@@ -148,6 +152,7 @@
 | `:ls`                      | 列出打开的文件，带编号 |
 | `:b{1~n}`                  | 切换至第n个文件        |
 | `:bd`                      | 关闭当前文件           |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 折叠
@@ -165,6 +170,7 @@
 |  `zk`                      | 移动至上一个折叠     |
 |  `zn`                      | 禁用折叠     |
 |  `zN`                      | 启用折叠     |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 标记
@@ -179,6 +185,7 @@
 | `:delm {mark}`             | 删除一个书签 |
 | `:delm!`                   | 删除全部书签 |
 | `:marks`                   | 显示系统全部书签 |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 标签
@@ -203,6 +210,7 @@
 | `:ptj[ump]`                | 同 `:tjump` 但在预览窗口显示标签 |
 | `:pc[lose]`                | 关闭标签预览窗口 |
 | `CTRL-W z`                 | 关闭标签预览窗口 |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ## Vimscript
@@ -214,12 +222,14 @@
 | `map/unmap`                | 基本映射(增加/删除)    |
 | `nmap/vmap/imap`           | 模式映射(`normal/visual/insert`)      |
 | `*noremap`                 | 非递归映射(与`*map`系列的命令对应)  |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### 示例
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
 | `nnoremap <space> viw`     | 高亮选中整个单词|
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ## 插件 
@@ -230,6 +240,7 @@
 | `:PluginInstall`           | installs plugins; append `!` to update or just :PluginUpdate |
 | `:PluginSearch foo`        | searches for foo; append `!` to refresh local cache |
 | `:PluginClean`             | confirms removal of unused plugins; append `!` to auto-approve removal |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### [nerdtree](https://github.com/scrooloose/nerdtree)
@@ -242,6 +253,7 @@
 | `P`                        | 回到根目录                    |
 | `m`                        | 打开文件系统操作菜单，添加，删除，移动和复制 |
 | `?`                        | 打开帮助文档，再按一次就会关闭        |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 
@@ -252,6 +264,7 @@
 | `<leader>cu`               | 解开注释              |
 | `<leader>c<space>`         | 加上/解开注释, 智能判断     |
 | `<leader>cy`               | 先复制, 再注解(p可以进行黏贴) |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 
@@ -262,6 +275,7 @@
 | `<C-f>` , `<C-b>`          | 在files/buf/mru files/funky中来回切换       |
 | `<C-d>`                    | 只查找文件名，而不是全路径                  |
 | `<C-j>` , `<C-k>`          | 在查找列表中上下切换            |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### [vim-fugitive](https://github.com/tpope/vim-fugitive)   
@@ -278,6 +292,7 @@
 | `Gbalme`                   | `git blame`                  |
 | `Ggrep`                    | `git grep`                  |
 | `Glog`                     | `git log`                  |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 
@@ -292,6 +307,7 @@
 | `<leader><leader>h`        | 行级跳转左                                  |
 | `<leader><leader>l`        | 行级跳转右                                  |
 | `<leader><leader>.`        | 重复上一次动作                              |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### [incsearch](https://github.com/haya14busa/incsearch.vim),[incsearch-fuzzy](https://github.com/haya14busa/incsearch-fuzzy.vim),[incsearch-easymotion](https://github.com/haya14busa/incsearch-easymotion.vim)
@@ -304,6 +320,7 @@
 | `<Space>?`                 | 向后模糊查查找                              |
 | `<Ctrl-j>`                | 向下查找                                    |
 | `<Ctrl-k>`                | 向上查找                                    |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 
