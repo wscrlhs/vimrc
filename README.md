@@ -23,6 +23,7 @@
   - [CtrlP , Ctrlp-funky](#ctrlp--ctrlp-funky)
   - [vim-fugitive](#vim-fugitive)
   - [vim-easymotion](#vim-easymotion)
+  - [incsearch,incsearch-fuzzy,incsearch-easymotion](#incsearchincsearch-fuzzyincsearch-easymotion)
 - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -275,6 +276,17 @@ Ctrlp-funky是Ctrlp的扩展
 | `<leader><leader>h`        | 行级跳转左                                  |
 | `<leader><leader>l`        | 行级跳转右                                  |
 | `<leader><leader>.`        | 重复上一次动作                              |
+
+### [incsearch](https://github.com/haya14busa/incsearch.vim),[incsearch-fuzzy](https://github.com/haya14busa/incsearch-fuzzy.vim),[incsearch-easymotion](https://github.com/haya14busa/incsearch-easymotion.vim)
+| 快捷键                     | 功能说明                                    |
+| -------------------------- | ------------------------------------------- |
+| `/`                        | 向前查找                                    |
+| `?`                        | 向后查找                                    |
+| `<Space>/`                 | 全局模糊查找                                |
+| `<Space>/`                 | 向前模糊查查找                              |
+| `<Space>?`                 | 向后模糊查查找                              |
+| `<Ctrl-j>.`                | 向下查找                                    |
+| `<Ctrl-k>.`                | 向上查找                                    |
 
 
 ## 参考 

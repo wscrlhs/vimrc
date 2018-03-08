@@ -11,7 +11,6 @@
 "
 "==================================
 " {
-
     " 定义快捷键的前缀，即 <Leader>
     let mapleader=","
 
@@ -112,8 +111,8 @@
     " 换回快捷键
     inoremap jk <esc>l
 
-
 " }
+
 
 "==================================
 "
@@ -121,7 +120,6 @@
 "
 " =================================
 " {
-"
     " 快速编辑vimrc文件
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     " 重新加载vimrc文件
@@ -155,9 +153,8 @@
     " Search
     set ignorecase smartcase
     set grepprg=grep\ -IrsnH
-
-
 "  }
+
 
 "==================================
 "
@@ -165,12 +162,12 @@
 "
 "==================================
 " {
-
     set nocompatible     
 
     " vundle 环境设置
     filetype off
     set rtp+=~/.vim/bundle/Vundle.vim
+
     " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
@@ -187,12 +184,15 @@
     Plugin 'plasticboy/vim-markdown'
     Plugin 'tpope/vim-fugitive'
     Plugin 'easymotion/vim-easymotion'
+    Plugin 'haya14busa/incsearch.vim'
+    Plugin 'haya14busa/incsearch-easymotion.vim'
+    Plugin 'haya14busa/incsearch-fuzzy.vim'
 
     " 插件列表结束
     call vundle#end()
     filetype plugin indent on
-    
 " }
+
 
 "==================================
 "
@@ -200,9 +200,7 @@
 "
 "==================================
 " {
-
     " vundle {
-        
         " Brief help
         " :PluginList       - lists configured plugins
         " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -211,24 +209,17 @@
         "
         " see :h vundle for more details or wiki for FAQ
         " Put your non-Plugin stuff after this line
-
     " }
-    "
-
 
     " airline {
-    
         " 设置状态栏主题风格
         let g:airline_theme='solarized'
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#left_sep = ' '
         let g:airline#extensions#tabline#left_alt_sep = '|' " Must be first line
-
     " }
-    
 
     " vim-color {
-    
         " 配色方案
         set background=dark
         let g:solarized_termcolors=256
@@ -236,13 +227,11 @@
         let g:solarized_contrast="normal"
         let g:solarized_visibility="normal"
         colorscheme solarized
-
     " }
     
     let g:neocomplete#enable_at_startup = 1
    
     " nerdtree {
-    
         map <C-e> <plug>NERDTreeTabsToggle<CR>
         map <leader>e :NERDTreeFind<CR>
         nmap <leader>nt :NERDTreeFind<CR>
@@ -268,9 +257,7 @@
             \ 'Ignored'   : '☒',
             \ "Unknown"   : "?"
             \ }
-
     " }
-    
 
     " ctrlp {
         let g:ctrlp_working_path_mode = 'ra'
@@ -284,13 +271,14 @@
 
         "funky
         nnoremap <Leader>fu :CtrlPFunky<Cr>
-
     "}
-
 
     " easymotion {
         let g:EasyMotion_smartcase = 1
         "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+        "全局设置成单个<leader>
+        "map <Leader> <Plug>(easymotion-prefix)
+
         map <Leader><leader>h <Plug>(easymotion-linebackward)
         map <Leader><Leader>j <Plug>(easymotion-j)
         map <Leader><Leader>k <Plug>(easymotion-k)
@@ -299,4 +287,37 @@
         map <Leader><leader>. <Plug>(easymotion-repeat)
      "}
 
+     " incsearch {
+        " You can use other keymappings like <C-l> instead of <CR> if you want to
+        " use these mappings as default search and somtimes want to move cursor with
+        " EasyMotion.
+        function! s:incsearch_config(...) abort
+          return incsearch#util#deepextend(deepcopy({
+          \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+          \   'keymap': {
+          \     "\<CR>": '<Over>(easymotion)'
+          \   },
+          \   'is_expr': 0
+          \ }), get(a:, 1, {}))
+        endfunction
+        
+        noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
+        noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
+        noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
+
+        function! s:config_easyfuzzymotion(...) abort
+          return extend(copy({
+          \   'converters': [incsearch#config#fuzzyword#converter()],
+          \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+          \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+          \   'is_expr': 0,
+          \   'is_stay': 1
+          \ }), get(a:, 1, {}))
+       endfunction
+        
+       noremap <silent><expr> <Space>/  incsearch#go(<SID>config_easyfuzzymotion())
+       noremap <silent><expr> <Space>?  incsearch#go(<SID>config_easyfuzzymotion({'command': '?'}))
+       noremap <silent><expr> <Space>g/ incsearch#go(<SID>config_easyfuzzymotion({'is_stay': 1}))
+      "}
+        
 " }
