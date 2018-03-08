@@ -1,3 +1,4 @@
+## table-of-contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -73,6 +74,7 @@
 | `:e <path/to/file>`        | 打开文件                          |
 | `:saveas <path/to/file>`   | 另存为                            |
 | `:help <command>`          | 显示相关命令的帮助                |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 进阶
 | 快捷键                     | 功能说明                       |
@@ -102,12 +104,14 @@
 | `:split`                   | 创建分屏                       |
 | `:vsplit`                  | 创建垂直分屏                   |
 | `:x , ZZ 或:wq`            | 保存并退出                     |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 更快
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
 | `yt,`                      | 复制到逗号
 | `dt"`                      | 删除到双引号     |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 更强 
 | 快捷键                     | 功能说明                   |
@@ -120,6 +124,7 @@
 | `<Leader>m`                | 在结对符之间跳转        |
 | `<leader>gbk`              | 编码转gbk               |
 | `<leader>utf`              | 编码转utf-8             |
+<br>[⬆ Back to top](#table-of-contents)
 
 ## 高级
 ### 寄存器
@@ -132,6 +137,7 @@
 | `@@`                       | 重复上次的 @{a-z} 操作 (N 次) |
 | `:@{a-z}`                  | 将寄存器 {a-z} 的内容当作 Ex 命令来执行 |
 | `:@@`                      | 重复上次的 :@{a-z} 操作  |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 文件
 | 快捷键                     | 功能说明               |
@@ -141,6 +147,7 @@
 | `:ls`                      | 列出打开的文件，带编号 |
 | `:b{1~n}`                  | 切换至第n个文件        |
 | `:bd`                      | 关闭当前文件           |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 折叠
 | 快捷键                     | 功能说明               |
@@ -157,6 +164,7 @@
 |  `zk`                      | 移动至上一个折叠     |
 |  `zn`                      | 禁用折叠     |
 |  `zN`                      | 启用折叠     |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 标记
 | 快捷键                     | 功能说明               |
@@ -170,6 +178,7 @@
 | `:delm {mark}`             | 删除一个书签 |
 | `:delm!`                   | 删除全部书签 |
 | `:marks`                   | 显示系统全部书签 |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 标签
 | 快捷键                     | 功能说明               |
@@ -193,6 +202,7 @@
 | `:ptj[ump]`                | 同 `:tjump` 但在预览窗口显示标签 |
 | `:pc[lose]`                | 关闭标签预览窗口 |
 | `CTRL-W z`                 | 关闭标签预览窗口 |
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Vimscript
 ### 基础
@@ -203,11 +213,13 @@
 | `map/unmap`                | 基本映射(增加/删除)    |
 | `nmap/vmap/imap`           | 模式映射(`normal/visual/insert`)      |
 | `*noremap`                 | 非递归映射(与`*map`系列的命令对应)  |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### 示例
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
 | `nnoremap <space> viw`     | 高亮选中整个单词|
+<br>[⬆ Back to top](#table-of-contents)
 
 ## 插件 
 ### [vundle](https://github.com/vundlevim/vundle.vim)
@@ -217,6 +229,7 @@
 | `:PluginInstall`           | installs plugins; append `!` to update or just :PluginUpdate |
 | `:PluginSearch foo`        | searches for foo; append `!` to refresh local cache |
 | `:PluginClean`             | confirms removal of unused plugins; append `!` to auto-approve removal |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### [nerdtree](https://github.com/scrooloose/nerdtree)
 | 快捷键                     | 功能说明                   |
@@ -228,6 +241,7 @@
 | `P`                        | 回到根目录                    |
 | `m`                        | 打开文件系统操作菜单，添加，删除，移动和复制 |
 | `?`                        | 打开帮助文档，再按一次就会关闭        |
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### [nerdcommenter](https://github.com/scrooloose/nerdcommenter) 
@@ -237,17 +251,17 @@
 | `<leader>cu`               | 解开注释              |
 | `<leader>c<space>`         | 加上/解开注释, 智能判断     |
 | `<leader>cy`               | 先复制, 再注解(p可以进行黏贴) |
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### [ctrlp](https://github.com/kien/ctrlp.vim) , [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky)
-Ctrlp-funky是Ctrlp的扩展
-
 | 快捷键                     | 功能说明                                    |
 | -------------------------- | ------------------------------------------- |
 | `<C-p>`                    | 启动文件查找功能，后续的所有操作都要使用这个操作   |
 | `<C-f>` , `<C-b>`          | 在files/buf/mru files/funky中来回切换       |
 | `<C-d>`                    | 只查找文件名，而不是全路径                  |
 | `<C-j>` , `<C-k>`          | 在查找列表中上下切换            |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### [vim-fugitive](https://github.com/tpope/vim-fugitive)   
 | 快捷键                     | 功能说明                                    |
@@ -263,6 +277,7 @@ Ctrlp-funky是Ctrlp的扩展
 | `Gbalme`                   | `git blame`                  |
 | `Ggrep`                    | `git grep`                  |
 | `Glog`                     | `git log`                  |
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### [vim-easymotion](https://github.com/easymotion/vim-easymotion)
@@ -276,6 +291,7 @@ Ctrlp-funky是Ctrlp的扩展
 | `<leader><leader>h`        | 行级跳转左                                  |
 | `<leader><leader>l`        | 行级跳转右                                  |
 | `<leader><leader>.`        | 重复上一次动作                              |
+<br>[⬆ Back to top](#table-of-contents)
 
 ### [incsearch](https://github.com/haya14busa/incsearch.vim),[incsearch-fuzzy](https://github.com/haya14busa/incsearch-fuzzy.vim),[incsearch-easymotion](https://github.com/haya14busa/incsearch-easymotion.vim)
 | 快捷键                     | 功能说明                                    |
@@ -285,8 +301,9 @@ Ctrlp-funky是Ctrlp的扩展
 | `<Space>/`                 | 全局模糊查找                                |
 | `<Space>/`                 | 向前模糊查查找                              |
 | `<Space>?`                 | 向后模糊查查找                              |
-| `<Ctrl-j>.`                | 向下查找                                    |
-| `<Ctrl-k>.`                | 向上查找                                    |
+| `<Ctrl-j>`                | 向下查找                                    |
+| `<Ctrl-k>`                | 向上查找                                    |
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ## 参考 
