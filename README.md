@@ -17,10 +17,10 @@
   - [基础](#%E5%9F%BA%E7%A1%80-1)
   - [示例](#%E7%A4%BA%E4%BE%8B)
 - [插件](#%E6%8F%92%E4%BB%B6)
-  - [Vundle](#vundle)
-  - [NERDtree](#nerdtree)
-  - [NERDCOMMENTER](#nerdcommenter)
-  - [CtrlP , Ctrlp-funky](#ctrlp--ctrlp-funky)
+  - [vundle](#vundle)
+  - [nerdtree](#nerdtree)
+  - [nerdcommenter](#nerdcommenter)
+  - [ctrlp , ctrlp-funky](#ctrlp--ctrlp-funky)
   - [vim-fugitive](#vim-fugitive)
   - [vim-easymotion](#vim-easymotion)
   - [incsearch,incsearch-fuzzy,incsearch-easymotion](#incsearchincsearch-fuzzyincsearch-easymotion)
@@ -210,7 +210,7 @@
 | `nnoremap <space> viw`     | 高亮选中整个单词|
 
 ## 插件 
-### [Vundle](https://github.com/VundleVim/Vundle.vim)
+### [vundle](https://github.com/vundlevim/vundle.vim)
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
 | `:PluginList`              | lists configured plugins |
@@ -218,7 +218,7 @@
 | `:PluginSearch foo`        | searches for foo; append `!` to refresh local cache |
 | `:PluginClean`             | confirms removal of unused plugins; append `!` to auto-approve removal |
 
-### [NERDtree](https://github.com/scrooloose/nerdtree)
+### [nerdtree](https://github.com/scrooloose/nerdtree)
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
 | `<leader>e`                | `:NERDTreeFind<CR>`             |
@@ -230,7 +230,7 @@
 | `?`                        | 打开帮助文档，再按一次就会关闭        |
 
 
-### [NERDCOMMENTER](https://github.com/scrooloose/nerdcommenter) 
+### [nerdcommenter](https://github.com/scrooloose/nerdcommenter) 
 | 快捷键                     | 功能说明              |
 | -------------------------- | --------------------- |
 | `<leader>cc`               | 加注释                |
@@ -239,7 +239,7 @@
 | `<leader>cy`               | 先复制, 再注解(p可以进行黏贴) |
 
 
-### [CtrlP](https://github.com/kien/ctrlp.vim) , [Ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky)
+### [ctrlp](https://github.com/kien/ctrlp.vim) , [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky)
 Ctrlp-funky是Ctrlp的扩展
 
 | 快捷键                     | 功能说明                                    |
