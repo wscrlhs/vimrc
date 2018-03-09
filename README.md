@@ -278,6 +278,7 @@
 | `Gstatus`                  | `git status`                                |
 | `Gwrite`                   | `git add`                                |
 | `Gcommit`                  | `git commit`                                |
+| `Gpush`                    | `git push`                                |
 | `Gremove`                  | `git rm`                                |
 | `Gmove`                    | `git mv`                                |
 | `Gread`                    | `git checkout -- filename`                  |
