@@ -140,7 +140,7 @@
     "set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
 
     "Ctrl-A 选中所有内容
-    noremap <silent>  <Leader>a  gg v G 
+    "noremap <silent>  <Leader>a  gg v G 
     "多窗口操作
     noremap <C-J> <C-W>j<C-W>_
     noremap <C-K> <C-W>k<C-W>_
