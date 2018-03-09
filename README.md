@@ -225,13 +225,6 @@
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### 示例
-| 快捷键                     | 功能说明                   |
-| -------------------------- | -------------------------- |
-| `nnoremap <space> viw`     | 高亮选中整个单词|
-
-<br>[⬆ Back to top](#table-of-contents)
-
 ## 插件 
 ### [vundle](https://github.com/vundlevim/vundle.vim)
 | 快捷键                     | 功能说明                   |
