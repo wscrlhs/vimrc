@@ -321,3 +321,6 @@
       "}
         
 " }
+
+   "add the '$' sign as change command indicator
+   set cpoptions+=$  
