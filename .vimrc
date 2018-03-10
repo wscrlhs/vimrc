@@ -14,11 +14,11 @@
      silent function! WINDOWS()
         return  (has('win32') || has('win64')) || has("multi_byte")
      endfunction
-" } 
+" }
 
 "==================================
 "
-" Basic 基本配置    
+" Basic 基本配置
 "
 "==================================
 " {
@@ -78,7 +78,7 @@
     " 禁止折行
     "set nowrap
     "设置自动折行
-    set wrap 
+    set wrap
 
     " 开启语法高亮功能
     syntax enable
@@ -97,7 +97,7 @@
     " 让 vim 把连续数量的空格视为一个制表符
     set softtabstop=4
 
-    " 设置 vim 显示字体  
+    " 设置 vim 显示字体
     set guifont=YaHei\ Consolas\ Hybrid\ 11.5
 
     "编码设置
@@ -108,7 +108,7 @@
     set helplang=cn
 
     "启动 vim 时折叠代码
-    "set foldenable 
+    "set foldenable
     "启动 vim 时关闭折叠代码
     set nofoldenable
     "基于缩进或语法进行代码折叠
@@ -150,7 +150,7 @@
     "set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
 
     "Ctrl-A 选中所有内容
-    "noremap <silent>  <Leader>a  gg v G 
+    "noremap <silent>  <Leader>a  gg v G
     "多窗口操作
     noremap <C-J> <C-W>j<C-W>_
     noremap <C-K> <C-W>k<C-W>_
@@ -159,7 +159,7 @@
 
     " For clever completion with the :find command
     set path+=**
-    
+
     " Search
     set ignorecase smartcase
     set grepprg=grep\ -IrsnH
@@ -175,7 +175,7 @@
 "
 "==================================
 " {
-    set nocompatible     
+    set nocompatible
 
     " vundle 环境设置
     filetype off
@@ -203,7 +203,7 @@
 
     if OSX()
        Plugin 'Valloric/YouCompleteMe'
-    endif 
+    endif
 
     " 插件列表结束
     call vundle#end()
@@ -245,9 +245,9 @@
         let g:solarized_visibility="normal"
         colorscheme solarized
     " }
-    
+
     let g:neocomplete#enable_at_startup = 1
-   
+
     " nerdtree {
         map <C-e> <plug>NERDTreeTabsToggle<CR>
         map <leader>e :NERDTreeFind<CR>
@@ -317,7 +317,7 @@
           \   'is_expr': 0
           \ }), get(a:, 1, {}))
         endfunction
-        
+
         noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
         noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
         noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
@@ -331,16 +331,16 @@
           \   'is_stay': 1
           \ }), get(a:, 1, {}))
        endfunction
-        
+
        noremap <silent><expr> <Space>/  incsearch#go(<SID>config_easyfuzzymotion())
        noremap <silent><expr> <Space>?  incsearch#go(<SID>config_easyfuzzymotion({'command': '?'}))
        noremap <silent><expr> <Space>g/ incsearch#go(<SID>config_easyfuzzymotion({'is_stay': 1}))
       "}
-        
+
 " }
 
    "add the '$' sign as change command indicator
-   set cpoptions+=$  
+   set cpoptions+=$
 
 
     " YouCompleteMe {
