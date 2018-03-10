@@ -4,6 +4,17 @@
 "
 "==================================
 
+" Identify platform {
+     silent function! OSX()
+         return has('macunix')
+     endfunction
+     silent function! LINUX()
+        return has('unix') && !has('macunix') && !has('win32unix')
+     endfunction
+     silent function! WINDOWS()
+        return  (has('win32') || has('win64')) || has("multi_byte")
+     endfunction
+" } 
 
 "==================================
 "
@@ -110,7 +121,6 @@
 
     " 换回快捷键
     inoremap jk <esc>l
-
 " }
 
 
@@ -153,19 +163,11 @@
     " Search
     set ignorecase smartcase
     set grepprg=grep\ -IrsnH
-"  }
 
-" Identify platform {
-     silent function! OSX()
-         return has('macunix')
-     endfunction
-     silent function! LINUX()
-        return has('unix') && !has('macunix') && !has('win32unix')
-     endfunction
-     silent function! WINDOWS()
-        return  (has('win32') || has('win64'))
-     endfunction
-    " } 
+    if WINDOWS()
+       set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    endif
+" }
 
 "==================================
 "
@@ -198,6 +200,7 @@
     Plugin 'haya14busa/incsearch.vim'
     Plugin 'haya14busa/incsearch-easymotion.vim'
     Plugin 'haya14busa/incsearch-fuzzy.vim'
+
     if OSX()
        Plugin 'Valloric/YouCompleteMe'
     endif 
@@ -381,3 +384,4 @@
             set completeopt-=preview
         endif
     " }
+" }
