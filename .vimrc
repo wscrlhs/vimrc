@@ -184,7 +184,11 @@
     " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
+
+    "themes
     Plugin 'altercation/vim-colors-solarized'
+    Plugin 'dracula/vim'
+
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'
@@ -200,7 +204,6 @@
     Plugin 'haya14busa/incsearch.vim'
     Plugin 'haya14busa/incsearch-easymotion.vim'
     Plugin 'haya14busa/incsearch-fuzzy.vim'
-    Plugin 'dracula/vim'
 
     if OSX()
        Plugin 'Valloric/YouCompleteMe'
@@ -245,6 +248,7 @@
         let g:solarized_contrast="normal"
         let g:solarized_visibility="normal"
         colorscheme dracula
+        "colorscheme solarized
     " }
 
     let g:neocomplete#enable_at_startup = 1
