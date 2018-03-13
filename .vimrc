@@ -200,6 +200,7 @@
     Plugin 'haya14busa/incsearch.vim'
     Plugin 'haya14busa/incsearch-easymotion.vim'
     Plugin 'haya14busa/incsearch-fuzzy.vim'
+    Plugin 'dracula/vim'
 
     if OSX()
        Plugin 'Valloric/YouCompleteMe'
@@ -230,7 +231,7 @@
 
     " airline {
         " 设置状态栏主题风格
-        let g:airline_theme='solarized'
+        "let g:airline_theme='solarized'
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#left_sep = ' '
         let g:airline#extensions#tabline#left_alt_sep = '|' " Must be first line
@@ -243,7 +244,7 @@
         let g:solarized_termtrans=1
         let g:solarized_contrast="normal"
         let g:solarized_visibility="normal"
-        colorscheme solarized
+        colorscheme dracula
     " }
 
     let g:neocomplete#enable_at_startup = 1
