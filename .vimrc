@@ -8,11 +8,11 @@
      silent function! OSX()
      return has('macunix')
      endfunction
-     
+
      silent function! LINUX()
      return has('unix') && !has('macunix') && !has('win32unix')
      endfunction
-     
+
      silent function! WINDOWS()
      return  (has('win32') || has('win64')) || has("multi_byte")
      endfunction
@@ -359,7 +359,7 @@
      " }
 
      " YouCompleteMe {
-     if isdirectory(expand("~/.vim/bundle/airline/"))
+     if isdirectory(expand("~/.vim/bundle/YouCompleteMe/"))
          if OSX()
              let g:acp_enableAtStartup = 0
 
@@ -405,7 +405,7 @@
      " undotree {
      "  set backup                  " Backups are nice ...
      if has('persistent_undo')
-         set undodir=~/.undodir/
+         set undodir=~/.vimundo/
          set undofile                " So is persistent undo ...
          set undolevels=1000         " Maximum number of changes that can be undone
          set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
