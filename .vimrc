@@ -204,6 +204,7 @@
     Plugin 'haya14busa/incsearch.vim'
     Plugin 'haya14busa/incsearch-easymotion.vim'
     Plugin 'haya14busa/incsearch-fuzzy.vim'
+    Plugin 'mbbill/undotree'
 
     if OSX()
        Plugin 'Valloric/YouCompleteMe'
@@ -389,4 +390,21 @@
             set completeopt-=preview
         endif
     " }
+
+    " undotree {
+    "  set backup                  " Backups are nice ...
+         if has('persistent_undo')
+            set undodir=~/.undodir/
+            set undofile                " So is persistent undo ...
+            "set undolevels=1000         " Maximum number of changes that can be undone
+            "set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+        endif
+         if isdirectory(expand("~/.vim/bundle/undotree/"))
+            nnoremap <Leader>u :UndotreeToggle<CR>
+            " If undotree is opened, it is likely one wants to interact with it.
+            let g:undotree_SetFocusWhenToggle=1
+        endif
+    " }
+
+
 " }

@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## table-of-contents 
-*generated with [DocToc](https://github.com/thlorenz/doctoc)*
+## table-of-contents
 
 - [操作](#%E6%93%8D%E4%BD%9C)
   - [基础](#%E5%9F%BA%E7%A1%80)
@@ -16,7 +15,6 @@
   - [标签](#%E6%A0%87%E7%AD%BE)
 - [Vimscript](#vimscript)
   - [基础](#%E5%9F%BA%E7%A1%80-1)
-  - [示例](#%E7%A4%BA%E4%BE%8B)
 - [插件](#%E6%8F%92%E4%BB%B6)
   - [vundle](#vundle)
   - [nerdtree](#nerdtree)
@@ -25,12 +23,13 @@
   - [vim-fugitive](#vim-fugitive)
   - [vim-easymotion](#vim-easymotion)
   - [incsearch,incsearch-fuzzy,incsearch-easymotion](#incsearchincsearch-fuzzyincsearch-easymotion)
+  - [undotree](#undotree)
 - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-## 操作 
+## 操作
 ### 基础
 | 快捷键                     | 功能说明                          |
 | -------------------------- | --------------------------        |
@@ -116,7 +115,7 @@
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### 更强 
+### 更强
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
 | `,`                        | 快捷键 `<leader>`                            |
@@ -225,7 +224,7 @@
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## 插件 
+## 插件
 ### [vundle](https://github.com/vundlevim/vundle.vim)
 | 快捷键                     | 功能说明                   |
 | -------------------------- | -------------------------- |
@@ -250,7 +249,7 @@
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### [nerdcommenter](https://github.com/scrooloose/nerdcommenter) 
+### [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 | 快捷键                     | 功能说明              |
 | -------------------------- | --------------------- |
 | `<leader>cc`               | 加注释                |
@@ -271,7 +270,7 @@
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### [vim-fugitive](https://github.com/tpope/vim-fugitive)   
+### [vim-fugitive](https://github.com/tpope/vim-fugitive)
 | 快捷键                     | 功能说明                                    |
 | -------------------------- | ------------------------------------------- |
 | `Git <command>`            | `git <command>`                                |
@@ -317,8 +316,34 @@
 
 <br>[⬆ Back to top](#table-of-contents)
 
+### [undotree](https://github.com/mbbill/undotree)
+| 快捷键                     | 功能说明                                    |
+| -------------------------- | ------------------------------------------- |
+| `mkdir ~/.undodir`         | 创建本地缓存目录                            |
+| `<leader>u`                | 打开undotree面板                            |
+| `>num<`                    | current change                              |
+| `{num}`                    | change to redo                              |
+| `[num]`                    | the last change                             |
+| `  s  `                    | saved changes                               |
+| `  S  `                    | last saved change                           |
+| `<cr>`                     | Revert to current                           |
+| `<2-LeftMouse>`            | Revert to current                           |
+| `u`                        | Undo                                        |
+| `<c-r>`                    | Redo                                        |
+| `<`                        | Revert to previous saved state              |
+| `>`                        | Revert to next saved state                  |
+| `J`                        | Revert to previous state                    |
+| `K`                        | Revert to next state                        |
+| `D`                        | Toggle diff panel                           |
+| `T`                        | Toggle relative timestamp                   |
+| `C`                        | Clear undo history                          |
+| `<tab>`                    | Set Focus to editor                         |
+| `q`                        | Close this panel                            |
+| `?`                        | Toggle quick help                           |
+<br>[⬆ Back to top](#table-of-contents)
 
-## 参考 
-[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)  
-[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)  
-[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)  
+
+## 参考
+[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)
+[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)
+[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)
