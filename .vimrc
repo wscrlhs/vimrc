@@ -429,7 +429,6 @@ endif
 
 "  set backup
 if has('persistent_undo')
-
     " set undo dir
     set undodir=~/.vimundo/
 
@@ -437,10 +436,10 @@ if has('persistent_undo')
     set undofile
 
     " Maximum number of changes that can be undone
-    set undolevels=1000
+    "set undolevels=1000
 
     " Maximum number lines to save for undo on a buffer reload
-    set undoreload=10000
+    "set undoreload=10000
 endif
 if isdirectory(expand("~/.vim/bundle/undotree/"))
     nnoremap <Leader>u :UndotreeToggle<CR>
