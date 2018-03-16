@@ -104,6 +104,8 @@
 | `:split`                   | 创建分屏                       |
 | `:vsplit`                  | 创建垂直分屏                   |
 | `:x , ZZ 或:wq`            | 保存并退出                     |
+| `q:`                       | 显示命令历史                   |
+| `q/`                       | 显示搜索历史                   |
 
 <br>[⬆ Back to top](#table-of-contents)
 

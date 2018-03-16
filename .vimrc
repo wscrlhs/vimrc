@@ -3,7 +3,6 @@
 " File: .vimrc
 "
 "==================================
-
 "====================
 "  Identify platform
 "====================
@@ -19,13 +18,11 @@ silent function! WINDOWS()
 return  (has('win32') || has('win64')) || has("multi_byte")
 endfunction
 
-
 "==================================
 "
 " Basic 基本配置
 "
 "==================================
-
 " 定义快捷键的前缀，即 <Leader>
 let mapleader=","
 
@@ -131,13 +128,11 @@ set nofoldenable
 " 换回快捷键
 inoremap jk <esc>l
 
-
 "==================================
 "
 " 高级配置
 "
 " =================================
-
 " 快速编辑vimrc文件
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " 重新加载vimrc文件
@@ -185,9 +180,6 @@ let g:neocomplete#enable_at_startup = 1
 "  插件管理
 "
 "==================================
-
-set nocompatible
-
 " vundle 环境设置
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -196,12 +188,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-"themes
+" themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'dracula/vim'
 
+" statusline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -225,7 +219,6 @@ endif
 call vundle#end()
 filetype plugin indent on
 
-
 "==================================
 "
 "  插件配置
@@ -239,8 +232,6 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 "
 "==================================
-
-
 "====================
 "  airline
 "====================
@@ -251,7 +242,6 @@ if isdirectory(expand("~/.vim/bundle/vim-airline/"))
     let g:airline#extensions#tabline#left_sep = ' '
     let g:airline#extensions#tabline#left_alt_sep = '|' " Must be first line
 endif
-
 
 "====================
 "  vim-color
@@ -266,7 +256,6 @@ if isdirectory(expand("~/.vim/bundle/vim/"))
     colorscheme dracula
     "colorscheme solarized
 endif
-
 
 "====================
 "  nerdtree
@@ -316,7 +305,6 @@ if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
     "funky
     nnoremap <Leader>fu :CtrlPFunky<Cr>
 endif
-"}
 
 "====================
 "  easymotion
@@ -338,7 +326,6 @@ if isdirectory(expand("~/.vim/bundle/vim-easymotion/"))
     " 重复上一次操作, 类似repeat插件, 很强大
     map <Leader><leader>. <Plug>(easymotion-repeat)
 endif
-
 
 "====================
 "  incsearch
@@ -375,7 +362,6 @@ if isdirectory(expand("~/.vim/bundle/incsearch.vim/"))
     noremap <silent><expr> <Space>?  incsearch#go(<SID>config_easyfuzzymotion({'command': '?'}))
     noremap <silent><expr> <Space>g/ incsearch#go(<SID>config_easyfuzzymotion({'is_stay': 1}))
 endif
-
 
 "====================
 "  YouCompleteMe
@@ -426,7 +412,6 @@ endif
 "====================
 "  undotree
 "====================
-
 "  set backup
 if has('persistent_undo')
     " set undo dir
@@ -448,6 +433,13 @@ if isdirectory(expand("~/.vim/bundle/undotree/"))
     let g:undotree_SetFocusWhenToggle=1
 endif
 
-
+"==================================
+"
+" 防止覆盖,在末尾配置
+"
+"==================================
 "add the '$' sign as change command indicator
 set cpoptions+=$
+
+" 显示输入的命令
+set showcmd
