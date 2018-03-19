@@ -7,6 +7,7 @@
   - [进阶](#%E8%BF%9B%E9%98%B6)
   - [更快](#%E6%9B%B4%E5%BF%AB)
   - [更强](#%E6%9B%B4%E5%BC%BA)
+  - [滚动缓冲区](#%E6%BB%9A%E5%8A%A8%E7%BC%93%E5%86%B2%E5%8C%BA)
 - [高级](#%E9%AB%98%E7%BA%A7)
   - [寄存器](#%E5%AF%84%E5%AD%98%E5%99%A8)
   - [文件](#%E6%96%87%E4%BB%B6)
@@ -128,6 +129,16 @@
 | `<Leader>m`                | 在结对符之间跳转        |
 | `<leader>gbk`              | 编码转gbk               |
 | `<leader>utf`              | 编码转utf-8             |
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### 滚动缓冲区
+| 快捷键                     | 功能说明                   |
+| -------------------------- | -------------------------- |
+| `<ctrl-f(orward)>`         | 向前                       |
+| `<ctrl-b(back)>`           | 向后                       |
+| `<ctrl-d(own)>`            | 向下                       |
+| `<ctrl-u(up)>`             | 向上                       |
 
 <br>[⬆ Back to top](#table-of-contents)
 
