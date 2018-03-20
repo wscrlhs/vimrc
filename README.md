@@ -353,6 +353,7 @@
 | `<tab>`                    | Set Focus to editor                         |
 | `q`                        | Close this panel                            |
 | `?`                        | Toggle quick help                           |
+
 <br>[⬆ Back to top](#table-of-contents)
 
 
