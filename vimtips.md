@@ -8,5 +8,19 @@
 - gCtrl-G 显示精确位置
 - \`\` 跳转到上一次的位置
 - f<char> 跳转到下一个字符
-
-Pg14
+- gf 打开光标所在位置的路径的文件
+- :read 打开文件自动加载到当前缓冲区
+- :sort x  排序
+- ctrl-x ctrl-l 整行补全
+- :set 查看所有的设置
+- diw 删除光标所在位置的单词
+- daw 删除一个单词
+- dtz 删除光标所在位置到下个字符z之间的内容
+- dib 删除（）内的内容
+- dap 删除一个段落
+- <ctrl-V><motion>I<text>  每行前插入
+- <ctrl-V><motion>A<text>  每行后插入
+- <ctrl-V><motion>c<text>  修改块内容
+- <ctrl-V><motion>r<text>  修改块内容变成一个字符
+- vip> 段落右移
+- vipj 段落连成一行
