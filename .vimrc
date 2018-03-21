@@ -172,8 +172,8 @@ if WINDOWS()
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
-let g:neocomplete#enable_at_startup = 1
-
+" 缩写 ,ctrl-v取消效果
+iab @i wscrlhs@gmail.com
 
 "==================================
 "
