@@ -1,26 +1,26 @@
-- 打开vim按 Ctrl+o+o, 它会直接打开上次编辑文件所在的位置
+- 打开vim按 `<ctrl-o-o>`, 它会直接打开上次编辑文件所在的位置
 - 使用 % 可以匹配 ( ([{}]) )
-- 你可以使用 Ctrl+o and Ctrl+i to navigate cursor position history back and forward.
-- 当光标在标签位置时, 点击 ctrl-] 跳转到相应的连接
+- 你可以使用 `<ctrl+o>` and `<ctrl+i>` to navigate cursor position history back and forward.
+- 当光标在标签位置时, 点击 `<ctrl-]>` 跳转到相应的连接
 - 移动光标到上一行行首:-
 - 移动到缓冲区百分之p的位置：p%
-- Ctrl-G 显示当前位置
-- gCtrl-G 显示精确位置
+- `<ctrl-g>` 显示当前位置
+- g`<ctrl-g>` 显示精确位置
 - \`\` 跳转到上一次的位置
 - f<char> 跳转到下一个字符
 - gf 打开光标所在位置的路径的文件
 - :read 打开文件自动加载到当前缓冲区
 - :sort x  排序
-- ctrl-x ctrl-l 整行补全
+- `<ctrl-x> <ctrl-l>` 整行补全
 - :set 查看所有的设置
 - diw 删除光标所在位置的单词
 - daw 删除一个单词
 - dtz 删除光标所在位置到下个字符z之间的内容
 - dib 删除（）内的内容
 - dap 删除一个段落
-- <ctrl-V><motion>I<text>  每行前插入
-- <ctrl-V><motion>A<text>  每行后插入
-- <ctrl-V><motion>c<text>  修改块内容
-- <ctrl-V><motion>r<text>  修改块内容变成一个字符
+- `<ctrl-V><motion>I<text>`  每行前插入
+- `<ctrl-V><motion>A<text>`  每行后插入
+- `<ctrl-V><motion>c<text>`  修改块内容
+- `<ctrl-V><motion>r<text>`  修改块内容变成一个字符
 - vip> 段落右移
 - vipj 段落连成一行
