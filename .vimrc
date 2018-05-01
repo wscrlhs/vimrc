@@ -172,6 +172,12 @@ if WINDOWS()
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
+" Mac vim 多行复制
+if OSX()
+vmap y :w !pbcopy<CR><CR>
+nmap yy :.w !pbcopy<CR><CR>
+endif
+
 " 缩写 ,ctrl-v取消效果
 iab @i wscrlhs@gmail.com
 
