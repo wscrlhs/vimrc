@@ -105,6 +105,9 @@ set guifont=YaHei\ Consolas\ Hybrid\ 11.5
 set enc=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
+"文件格式
+set fileformats=unix,dos
+
 "语言设置
 set langmenu=zh_CN.UTF-8
 set helplang=cn
@@ -125,7 +128,7 @@ set nofoldenable
 "指定折叠缩进级别
 "set foldlevel=0
 
-" 换回快捷键
+"换回快捷键
 inoremap jk <esc>l
 
 "==================================
