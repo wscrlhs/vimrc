@@ -24,3 +24,14 @@
 - `<ctrl-V><motion>r<text>`  修改块内容变成一个字符
 - vip> 段落右移
 - vipj 段落连成一行
+
+**全局命令g**
+`:[range]global[!]/{pattern}/{command}`
+- [range] 指定文本范围,默认为整个文档
+- pattern 在范围 range 内的行如果匹配 pattern，则执行 command
+- ! 表示取反，也就是不匹配的行，也可以使用 vglobal
+- command 默认是打印文本
+- d 删除
+- m 移动
+- t 拷贝
+- s 替换
