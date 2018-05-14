@@ -153,7 +153,6 @@ nnoremap <leader>** viw<esc>a**<esc>hbi**<esc>lel
 "编码转gbk
 noremap <leader>gbk :e ++enc=gbk<CR>
 noremap <leader>utf :e ++enc=utf-8<CR>
-"set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
 
 "Ctrl-A 选中所有内容
 "noremap <silent>  <Leader>a  gg v G
