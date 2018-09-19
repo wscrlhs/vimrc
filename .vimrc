@@ -455,3 +455,9 @@ set cpoptions+=$
 
 " 显示输入的命令
 set showcmd
+
+"支持使用鼠标
+"set mouse=a
+ 
+"打开英语单词的拼写检查 excellent
+set spell spelllang=en_us
