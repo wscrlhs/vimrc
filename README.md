@@ -360,6 +360,6 @@
 
 
 ## 参考
-[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html)
-[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)
-[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/)
+[vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html) 
+[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html) 
+[笨方法学Vimscript](http://learnvimscriptthehardway.onefloweroneworld.com/) 
