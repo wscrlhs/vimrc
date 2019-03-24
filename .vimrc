@@ -106,8 +106,8 @@ set enc=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
 "文件格式
-"set fileformats=unix,dos
-set fileformats=unix
+set fileformats=unix,dos
+"set fileformats=unix
 
 "语言设置
 set langmenu=zh_CN.UTF-8
@@ -192,10 +192,13 @@ iab @i wscrlhs@gmail.com
 " vundle 环境设置
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 
 " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'junegunn/fzf.vim'
 
 " themes
 Plugin 'altercation/vim-colors-solarized'
@@ -458,7 +461,16 @@ set cpoptions+=$
 set showcmd
 
 "支持使用鼠标
-"set mouse=a
+set mouse=a
  
 "打开英语单词的拼写检查 excellent
 set spell spelllang=en_us
+
+
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+
+
+" 参考
+" https://www.jianshu.com/p/bb91582317ed
+"
