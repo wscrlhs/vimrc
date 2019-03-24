@@ -359,6 +359,20 @@
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### [fzf](https://github.com/junegunn/fzf)
+| 快捷键                     | 功能说明                                    |
+| -------------------------- | ------------------------------------------- |
+| `<leader>f`                        | 快速搜索当前工程目录下的文件|
+| `<leader>b`                        | 快速搜索buffer   |
+| `<Esc> 或 <C-c>`                 | 退出 fzf| 
+| `|<leader>A`                    | 在Vim内搜索项目内的文本| 
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+
+
+
 ## 参考
 [vim中文手册](http://vimcdoc.sourceforge.net/doc/help.html) 
 [简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html) 

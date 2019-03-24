@@ -449,6 +449,24 @@ if isdirectory(expand("~/.vim/bundle/undotree/"))
     let g:undotree_SetFocusWhenToggle=1
 endif
 
+"====================
+"  fzf
+"====================
+if isdirectory(expand("~/.vim/bundle/fzf.vim/"))
+     nnoremap <silent> <Leader>f :Files<CR>
+     nnoremap <silent> <Leader>b :Buffers<CR>
+endif
+
+"====================
+"  the_silver_searcher
+"====================
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+nnoremap <silent> <Leader>A :Ag<CR>
+
 "==================================
 "
 " 防止覆盖,在末尾配置
@@ -465,11 +483,6 @@ set mouse=a
  
 "打开英语单词的拼写检查 excellent
 set spell spelllang=en_us
-
-
-nnoremap <silent> <Leader>f :Files<CR>
-nnoremap <silent> <Leader>b :Buffers<CR>
-
 
 " 参考
 " https://www.jianshu.com/p/bb91582317ed
