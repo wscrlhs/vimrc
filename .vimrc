@@ -6,6 +6,7 @@
 "====================
 "  Identify platform
 "====================
+
 silent function! OSX()
 return has('macunix')
 endfunction
@@ -77,9 +78,9 @@ set cursorline
 set hlsearch
 
 " 禁止折行
-"set nowrap
+set nowrap
 "设置自动折行
-set wrap
+"set wrap
 
 " 开启语法高亮功能
 syntax enable
@@ -114,20 +115,20 @@ set langmenu=zh_CN.UTF-8
 set helplang=cn
 
 "启动 vim 时折叠代码
-"set foldenable
+set foldenable
 
 "启动 vim 时关闭折叠代码
-set nofoldenable
+"set nofoldenable
 
 "基于缩进或语法进行代码折叠
-"set foldmethod=indent
+set foldmethod=indent
 "set foldmethod=syntax
 
 "设置折叠标志宽度
-"set foldcolumn =1
+set foldcolumn =1
 
 "指定折叠缩进级别
-"set foldlevel=0
+set foldlevel =0
 
 "换回快捷键
 inoremap jk <esc>l
@@ -222,6 +223,8 @@ Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-easymotion.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'mbbill/undotree'
+Plugin 'fatih/vim-go'
+Plugin 'morhetz/gruvbox'
 
 if OSX()
     Plugin 'Valloric/YouCompleteMe'
@@ -270,7 +273,8 @@ if isdirectory(expand("~/.vim/bundle/vim/"))
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
     "colorscheme dracula
-    colorscheme solarized
+    "colorscheme solarized
+    colorscheme gruvbox
 endif
 
 "====================
@@ -302,6 +306,26 @@ if isdirectory(expand("~/.vim/bundle/nerdtree/"))
                 \ 'Ignored'   : '☒',
                 \ "Unknown"   : "?"
                 \ }
+
+    " NERDTress File highlighting
+     function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+     exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+     exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+     endfunction
+
+    call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+    call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+    call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+    call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+    call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+    call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+    call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+    call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+    call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+    call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+    call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+    call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+    call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 endif
 
 "====================
@@ -393,6 +417,7 @@ if isdirectory(expand("~/.vim/bundle/YouCompleteMe/"))
         let g:UltiSnipsExpandTrigger = '<C-j>'
         let g:UltiSnipsJumpForwardTrigger = '<C-j>'
         let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+        let g:ycm_key_invoke_completion = '<c-z>'
 
         " Enable omni completion.
         autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -402,6 +427,13 @@ if isdirectory(expand("~/.vim/bundle/YouCompleteMe/"))
         autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
         autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
         autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+   "     " 颜色配置
+   "     highlight Pmenu ctermfg=12 ctermbg=0 guifg=#ffffff guibg=#000000
+   "     highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+   "     highlight Conceal guifg=White guibg=Red
+   "     " 由于YCM的警告语句在黑色终端下配色很模糊，修改成较为高亮的蓝底黑字
+   "     highlight link YcmWarningSection Pmenu
 
         " Haskell post write lint and check with ghcmod
         " $ `cabal install ghcmod` if missing and ensure
@@ -466,6 +498,12 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 nnoremap <silent> <Leader>A :Ag<CR>
+
+
+"=========  vim-go  ========================
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_fmt_command = "goimports"
 
 "==================================
 "
