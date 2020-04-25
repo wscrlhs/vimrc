@@ -72,7 +72,7 @@ set number
 
 " 高亮显示当前行/列
 set cursorline
-" set cursorcolumn
+set cursorcolumn
 
 " 高亮显示搜索结果
 set hlsearch
@@ -185,6 +185,9 @@ endif
 " 缩写 ,ctrl-v取消效果
 iab @i wscrlhs@gmail.com
 
+" 设置对齐线 excellent
+ set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
+
 "==================================
 "
 "  插件管理
@@ -200,11 +203,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'junegunn/fzf.vim'
-
 " themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'dracula/vim'
-
 " statusline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -225,6 +226,8 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'mbbill/undotree'
 Plugin 'fatih/vim-go'
 Plugin 'morhetz/gruvbox'
+Plugin 'SirVer/ultisnips'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 if OSX()
     Plugin 'Valloric/YouCompleteMe'
@@ -500,13 +503,24 @@ command! -bang -nargs=* Ag
 nnoremap <silent> <Leader>A :Ag<CR>
 
 
-"=========  vim-go  ========================
+"================================
+" vim-go
+"================================
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_addtags_transform = "camelcase"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
-"==================================
-"
+
 " 防止覆盖,在末尾配置
 "
 "==================================
@@ -524,4 +538,3 @@ set spell spelllang=en_us
 
 " 参考
 " https://www.jianshu.com/p/bb91582317ed
-"
