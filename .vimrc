@@ -219,6 +219,11 @@
     Plugin 'morhetz/gruvbox'
     Plugin 'SirVer/ultisnips'
     Plugin 'AndrewRadev/splitjoin.vim'
+    
+    if executable('ctags')
+       Plugin 'majutsushi/tagbar'
+    endif
+
 
     if OSX()
         Plugin 'Valloric/YouCompleteMe'
@@ -443,6 +448,16 @@
             " When enabled, there can be too much visual noise
             " especially when splits are used.
             set completeopt-=preview
+
+            " lsp-service
+            let s:lsp = '/Users/wscrlhs/work/github/lsp-examples'
+            let g:ycm_language_server = [
+                \   {
+                \     'name': 'php',
+                \     'cmdline': [ 'php', expand( s:lsp . '/php/vendor/bin/php-language-server.php' ) ],
+                \     'filetypes': [ 'php' ],
+                \   },
+                \ ]
         endif
     endif
 " }
@@ -468,6 +483,9 @@
 
         " If undotree is opened, it is likely one wants to interact with it.
         let g:undotree_SetFocusWhenToggle=1
+
+        set undofile " Maintain undo history between sessions
+        set undodir=~/.vim/undodir
     endif
 " }
 
@@ -504,6 +522,13 @@
     let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
     let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    " highlight same variable in view
+    let g:go_auto_sameids = 1
+    let g:go_list_type = "quickfix"
+    let g:go_test_timeout = '10s'
+    let g:go_textobj_include_function_doc = 0
+    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+    let g:go_metalinter_deadline = "5s"
 " }
 
 " 防止覆盖,在末尾配置 {
@@ -520,6 +545,12 @@
     " 打开英语单词的拼写检查 excellent
     set spell spelllang=en_us
 " }
+
+" TagBar {
+        if isdirectory(expand("~/.vim/bundle/tagbar/"))
+            nnoremap <silent> <leader>tt :TagbarToggle<CR>
+        endif
+"}
 
 " 参考 {
 
