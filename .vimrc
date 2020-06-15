@@ -185,53 +185,50 @@
 " }
 
 " 插件管理 {
-
-    " vundle 环境设置
-    filetype off
-    set rtp+=~/.vim/bundle/Vundle.vim
     set rtp+=/usr/local/opt/fzf
 
-    " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
-    call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'junegunn/fzf.vim'
+    " vim-plug 
+    " 安装  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    call plug#begin()
+    Plug 'VundleVim/Vundle.vim'
+    Plug 'junegunn/fzf.vim'
     " themes
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'dracula/vim'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'dracula/vim'
     " statusline
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'Xuyuanp/nerdtree-git-plugin'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'tacahiroy/ctrlp-funky'
-    Plugin 'godlygeek/tabular'
-    Plugin 'plasticboy/vim-markdown'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'easymotion/vim-easymotion'
-    Plugin 'haya14busa/incsearch.vim'
-    Plugin 'haya14busa/incsearch-easymotion.vim'
-    Plugin 'haya14busa/incsearch-fuzzy.vim'
-    Plugin 'mbbill/undotree'
-    Plugin 'fatih/vim-go'
-    Plugin 'morhetz/gruvbox'
-    Plugin 'SirVer/ultisnips'
-    Plugin 'AndrewRadev/splitjoin.vim'
-    
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tacahiroy/ctrlp-funky'
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'tpope/vim-fugitive'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'haya14busa/incsearch.vim'
+    Plug 'haya14busa/incsearch-easymotion.vim'
+    Plug 'haya14busa/incsearch-fuzzy.vim'
+    Plug 'mbbill/undotree'
+    Plug 'fatih/vim-go'
+    Plug 'morhetz/gruvbox'
+    Plug 'SirVer/ultisnips'
+    Plug 'AndrewRadev/splitjoin.vim'
+     
     if executable('ctags')
-       Plugin 'majutsushi/tagbar'
+       Plug 'majutsushi/tagbar'
     endif
 
 
     if OSX()
-        Plugin 'Valloric/YouCompleteMe'
+        Plug 'Valloric/YouCompleteMe'
     endif
 
     " 插件列表结束
-    call vundle#end()
-    filetype plugin indent on
+    call plug#end()
 
     " 插件配置 {
         " Brief help
