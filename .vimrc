@@ -126,9 +126,6 @@
 
     " 指定折叠缩进级别
     set foldlevel =0
-
-    " 换回快捷键
-    inoremap jk <esc>l
 " }
 
 " 高级配置 {
@@ -193,10 +190,8 @@
     call plug#begin()
     Plug 'VundleVim/Vundle.vim'
     Plug 'junegunn/fzf.vim'
-    " themes
     Plug 'altercation/vim-colors-solarized'
     Plug 'dracula/vim'
-    " statusline
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'scrooloose/nerdtree'
@@ -231,19 +226,19 @@
     call plug#end()
 
     " 插件配置 {
-        " Brief help
-        " :PluginList       - lists configured plugins
-        " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-        " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-        " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-        " see :h vundle for more details or wiki for FAQ
-        " Put your non-Plugin stuff after this line
+    " PlugInstall [name ...] [#threads]	Install plugins
+    " PlugUpdate [name ...] [#threads]	Install or update plugins
+    " PlugClean[!]	Remove unlisted plugins (bang version will clean without prompt)
+    " PlugUpgrade	Upgrade vim-plug itself
+    " PlugStatus	Check the status of plugins
+    " PlugDiff	Examine changes from the previous update and the pending changes
+    " PlugSnapshot[!] [output path]	Generate script for restoring the current snapshot of the plugins
     " }
 " }
 
 
 " Airline {
-    if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+    if isdirectory(expand("~/.vim/plugged/vim-airline/"))
         " 设置状态栏主题风格
         "let g:airline_theme='solarized'
         let g:airline_theme='serene'
@@ -257,7 +252,7 @@
 " }
 
 " Vim-Color {
-    if isdirectory(expand("~/.vim/bundle/vim/"))
+    if isdirectory(expand("~/.vim/plugged/vim/"))
         " 配色方案
         set background=dark
         let g:solarized_termcolors=256
@@ -272,7 +267,7 @@
 
 " Nerdtree {
 
-    if isdirectory(expand("~/.vim/bundle/nerdtree/"))
+    if isdirectory(expand("~/.vim/plugged/nerdtree/"))
         map <C-e> <plug>NERDTreeTabsToggle<CR>
         map <leader>e :NERDTreeFind<CR>
         nmap <leader>nt :NERDTreeFind<CR>
@@ -323,7 +318,7 @@
 
 " Ctrlp {
 
-    if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
+    if isdirectory(expand("~/.vim/plugged/ctrlp.vim/"))
         let g:ctrlp_working_path_mode = 'ra'
         nnoremap <silent> <C-p> :CtrlP<CR>
         nnoremap <silent> <C-m> :CtrlPMRU<CR>
@@ -341,7 +336,7 @@
 
 " Easymotion {
 
-    if isdirectory(expand("~/.vim/bundle/vim-easymotion/"))
+    if isdirectory(expand("~/.vim/plugged/vim-easymotion/"))
         let g:EasyMotion_smartcase = 1
 
         " keep cursor colum when JK motion
@@ -362,7 +357,7 @@
 
 " Incsearch {
 
-    if isdirectory(expand("~/.vim/bundle/incsearch.vim/"))
+    if isdirectory(expand("~/.vim/plugged/incsearch.vim/"))
         " You can use other keymappings like <C-l> instead of <CR> if you want to
         " use these mappings as default search and somtimes want to move cursor with
         " EasyMotion.
@@ -398,7 +393,7 @@
 
 " YouCompleteMe {
 
-    if isdirectory(expand("~/.vim/bundle/YouCompleteMe/"))
+    if isdirectory(expand("~/.vim/plugged/YouCompleteMe/"))
         if OSX()
             let g:acp_enableAtStartup = 0
 
@@ -475,7 +470,7 @@
         " Maximum number lines to save for undo on a buffer reload
         "set undoreload=10000
     endif
-    if isdirectory(expand("~/.vim/bundle/undotree/"))
+    if isdirectory(expand("~/.vim/plugged/undotree/"))
         nnoremap <Leader>u :UndotreeToggle<CR>
 
         " If undotree is opened, it is likely one wants to interact with it.
@@ -488,7 +483,7 @@
 
 " Fzf {
 
-    if isdirectory(expand("~/.vim/bundle/fzf.vim/"))
+    if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
          nnoremap <silent> <Leader>f :Files<CR>
          nnoremap <silent> <Leader>b :Buffers<CR>
     endif
@@ -544,7 +539,7 @@
 " }
 
 " TagBar {
-        if isdirectory(expand("~/.vim/bundle/tagbar/"))
+        if isdirectory(expand("~/.vim/plugged/tagbar/"))
             nnoremap <silent> <leader>tt :TagbarToggle<CR>
         endif
 "}
