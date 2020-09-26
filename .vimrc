@@ -25,7 +25,7 @@
     let mapleader=","
 
     "通过9跳转到行末尾,0默认跳转到行首
-    noremap 9 $
+    "noremap 9 $
 
     " 定义快捷键在结对符之间跳转
     noremap <Leader>m %
@@ -112,10 +112,10 @@
     set helplang=cn
 
     " 启动 vim 时折叠代码
-    set foldenable
+    "set foldenable
 
     " 启动 vim 时关闭折叠代码
-    "set nofoldenable
+    set nofoldenable
 
     " 基于缩进或语法进行代码折叠
     set foldmethod=indent
@@ -212,6 +212,8 @@
     Plug 'morhetz/gruvbox'
     Plug 'SirVer/ultisnips'
     Plug 'AndrewRadev/splitjoin.vim'
+    Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+    Plug 'chr4/nginx.vim'
      
     if executable('ctags')
        Plug 'majutsushi/tagbar'
@@ -513,7 +515,10 @@
     let g:go_highlight_operators = 1
     let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
+
     let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
     " highlight same variable in view
     let g:go_auto_sameids = 1
     let g:go_list_type = "quickfix"
@@ -521,6 +526,17 @@
     let g:go_textobj_include_function_doc = 0
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
     let g:go_metalinter_deadline = "5s"
+
+    " 我自定义的
+    noremap <leader>gl :GoLint<CR>
+" }
+
+
+" Vim-Grepper {
+    nnoremap <leader>g :Grepper<cr>
+    let g:grepper = { 'next_tool': '<leader>g' }
+
+
 " }
 
 " 防止覆盖,在末尾配置 {
