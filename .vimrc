@@ -181,6 +181,10 @@
      set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 " }
 
+" 自启动设置 {
+  " autocmd vimenter * NERDTree
+" }
+
 " 插件管理 {
     set rtp+=/usr/local/opt/fzf
 
@@ -283,7 +287,7 @@
         let NERDTreeKeepTreeInNewTab=1
         let g:nerdtree_tabs_open_on_gui_startup=0
 
-        let g:NERDTreeIndicatorMapCustom = {
+        let g:NERDTreeGitStatusIndicatorMapCustom= {
                     \ "Modified"  : "✹",
                     \ "Staged"    : "✚",
                     \ "Untracked" : "✭",
@@ -331,8 +335,13 @@
         " CtrlP extensions
         let g:ctrlp_extensions = ['funky']
 
-        "funky
+        "ctrlp-funky
         nnoremap <Leader>fu :CtrlPFunky<Cr>
+        " narrow the list down with a word under cursor
+        nnoremap <Leader>uu :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+        " f you want to have this highlight feature
+        let g:ctrlp_funky_matchtype = 'path'
+        let g:ctrlp_funky_syntax_highlight = 1
     endif
 " }
 
