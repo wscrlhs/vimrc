@@ -558,16 +558,24 @@
 
     " 支持使用鼠标
     set mouse=a
-     
+
     " 打开英语单词的拼写检查 excellent
     set spell spelllang=en_us
 " }
+
 
 " TagBar {
         if isdirectory(expand("~/.vim/plugged/tagbar/"))
             nnoremap <silent> <leader>tt :TagbarToggle<CR>
         endif
 "}
+
+" vim-fugitive {
+     " Fugitive Conflict Resolution
+     nnoremap <leader>gd :Gvdiff!<CR>
+     "nnoremap gdh :diffget //2<CR>
+     "nnoremap gdl :diffget //3<CR>
+" }
 
 " 参考 {
 
