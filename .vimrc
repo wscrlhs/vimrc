@@ -5,7 +5,6 @@
 " }
 
 " Identify platform {
-
     silent function! OSX()
     return has('macunix')
     endfunction
@@ -20,15 +19,8 @@
 " }
 
 " Basic 基本配置{
-
     " 定义快捷键的前缀，即 <Leader>
     let mapleader=","
-
-    "通过9跳转到行末尾,0默认跳转到行首
-    "noremap 9 $
-
-    " 定义快捷键在结对符之间跳转
-    noremap <Leader>m %
 
     " 让配置变更立即生效
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -113,23 +105,18 @@
 
     " 启动 vim 时折叠代码
     "set foldenable
-
     " 启动 vim 时关闭折叠代码
     set nofoldenable
-
     " 基于缩进或语法进行代码折叠
     set foldmethod=indent
     "set foldmethod=syntax
-
     " 设置折叠标志宽度
     set foldcolumn =1
-
     " 指定折叠缩进级别
     set foldlevel =0
 " }
 
 " 高级配置 {
-
     " 快速编辑vimrc文件
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
     " 重新加载vimrc文件
@@ -169,10 +156,11 @@
     endif
 
     " Mac vim 多行复制
-    "if OSX()
-    "vmap y :w !pbcopy<CR><CR>
-    "nmap yy :.w !pbcopy<CR><CR>
-    "endif
+    if OSX()
+       "vmap y :w !pbcopy<CR><CR>
+       "nmap yy :.w !pbcopy<CR><CR>
+       noremap <leader>y :w !pbcopy<CR><CR>
+    endif
 
     " 缩写 ,ctrl-v取消效果
     iab @i wscrlhs@gmail.com
@@ -182,10 +170,18 @@
 " }
 
 " 自启动设置 {
-  " autocmd vimenter * NERDTree
+    "autocmd vimenter * NERDTree
 " }
 
 " 插件管理 {
+    " PlugInstall [name ...] [#threads]	Install plugins
+    " PlugUpdate [name ...] [#threads]	Install or update plugins
+    " PlugClean[!]	Remove unlisted plugins (bang version will clean without prompt)
+    " PlugUpgrade	Upgrade vim-plug itself
+    " PlugStatus	Check the status of plugins
+    " PlugDiff	Examine changes from the previous update and the pending changes
+    " PlugSnapshot[!] [output path]	Generate script for restoring the current snapshot of the plugins
+
     set rtp+=/usr/local/opt/fzf
 
     " vim-plug 
@@ -223,25 +219,13 @@
        Plug 'majutsushi/tagbar'
     endif
 
-
     if OSX()
         Plug 'Valloric/YouCompleteMe'
     endif
 
     " 插件列表结束
     call plug#end()
-
-    " 插件配置 {
-    " PlugInstall [name ...] [#threads]	Install plugins
-    " PlugUpdate [name ...] [#threads]	Install or update plugins
-    " PlugClean[!]	Remove unlisted plugins (bang version will clean without prompt)
-    " PlugUpgrade	Upgrade vim-plug itself
-    " PlugStatus	Check the status of plugins
-    " PlugDiff	Examine changes from the previous update and the pending changes
-    " PlugSnapshot[!] [output path]	Generate script for restoring the current snapshot of the plugins
-    " }
 " }
-
 
 " Airline {
     if isdirectory(expand("~/.vim/plugged/vim-airline/"))
@@ -272,7 +256,6 @@
 " }
 
 " Nerdtree {
-
     if isdirectory(expand("~/.vim/plugged/nerdtree/"))
         map <C-e> <plug>NERDTreeTabsToggle<CR>
         map <leader>e :NERDTreeFind<CR>
@@ -323,7 +306,6 @@
 " }
 
 " Ctrlp {
-
     if isdirectory(expand("~/.vim/plugged/ctrlp.vim/"))
         let g:ctrlp_working_path_mode = 'ra'
         nnoremap <silent> <C-p> :CtrlP<CR>
@@ -346,7 +328,6 @@
 " }
 
 " Easymotion {
-
     if isdirectory(expand("~/.vim/plugged/vim-easymotion/"))
         let g:EasyMotion_smartcase = 1
 
@@ -367,7 +348,6 @@
 " }
 
 " Incsearch {
-
     if isdirectory(expand("~/.vim/plugged/incsearch.vim/"))
         " You can use other keymappings like <C-l> instead of <CR> if you want to
         " use these mappings as default search and somtimes want to move cursor with
@@ -403,7 +383,6 @@
 " }
 
 " YouCompleteMe {
-
     if isdirectory(expand("~/.vim/plugged/YouCompleteMe/"))
         if OSX()
             let g:acp_enableAtStartup = 0
@@ -466,7 +445,6 @@
 " }
 
 " Undotree {
-
     " set backup
     if has('persistent_undo')
         " set undo dir
@@ -481,6 +459,7 @@
         " Maximum number lines to save for undo on a buffer reload
         "set undoreload=10000
     endif
+
     if isdirectory(expand("~/.vim/plugged/undotree/"))
         nnoremap <Leader>u :UndotreeToggle<CR>
 
@@ -493,7 +472,6 @@
 " }
 
 " Fzf {
-
     if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
          nnoremap <silent> <Leader>f :Files<CR>
          nnoremap <silent> <Leader>b :Buffers<CR>
@@ -501,7 +479,6 @@
 " }
 
 " The_silver_searcher {
-
     command! -bang -nargs=* Ag
       \ call fzf#vim#ag(<q-args>,
       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
@@ -511,7 +488,6 @@
 " }
 
 " Vim-Go {
-
     let g:go_def_mode='gopls'
     let g:go_info_mode='gopls'
     let g:go_fmt_command = "goimports"
@@ -549,7 +525,6 @@
 " }
 
 " 防止覆盖,在末尾配置 {
-
     "add the '$' sign as change command indicator
     set cpoptions+=$
 
