@@ -214,6 +214,8 @@
     Plug 'AndrewRadev/splitjoin.vim'
     Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
     Plug 'chr4/nginx.vim'
+    Plug 'tpope/vim-surround'
+    Plug 'kshenoy/vim-signature'
      
     if executable('ctags')
        Plug 'majutsushi/tagbar'
