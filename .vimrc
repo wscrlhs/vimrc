@@ -104,9 +104,9 @@
     set helplang=cn
 
     " 启动 vim 时折叠代码
-    "set foldenable
+    set foldenable
     " 启动 vim 时关闭折叠代码
-    set nofoldenable
+    "set nofoldenable
     " 基于缩进或语法进行代码折叠
     set foldmethod=indent
     "set foldmethod=syntax
@@ -513,6 +513,7 @@
     let g:go_textobj_include_function_doc = 0
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
     let g:go_metalinter_deadline = "5s"
+    let g:go_fmt_experimental = 1
 
     " 我自定义的
     noremap <leader>gl :GoLint<CR>
