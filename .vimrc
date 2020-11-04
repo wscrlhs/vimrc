@@ -220,6 +220,7 @@ Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'chr4/nginx.vim'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
  
 if executable('ctags')
    Plug 'majutsushi/tagbar'
@@ -497,8 +498,10 @@ endif
 " Fzf 
 "------------------------------------------------------------------------------
 if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
-     nnoremap <silent> <Leader>f :Files<CR>
-     nnoremap <silent> <Leader>b :Buffers<CR>
+     "nnoremap <silent> <Leader>f :Files<CR>
+     "nnoremap <silent> <Leader>b :Buffers<CR>
+     nnoremap <silent> <Leader>rg :Leaderf rg<CR>
+     nnoremap <silent> <Leader>mru :Leaderf mru<CR>
 endif
 
 
