@@ -216,7 +216,7 @@ Plug 'fatih/vim-go'
 Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+" Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'chr4/nginx.vim'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
@@ -502,17 +502,15 @@ if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
      "nnoremap <silent> <Leader>b :Buffers<CR>
      nnoremap <silent> <Leader>rg :Leaderf rg<CR>
      nnoremap <silent> <Leader>mru :Leaderf mru<CR>
+
+     " The_silver_searcher {
+     command! -bang -nargs=* Ag
+       \ call fzf#vim#ag(<q-args>,
+       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+       \                 <bang>0)
+     nnoremap <silent> <Leader>A :Ag<CR>
 endif
-
-
-" The_silver_searcher {
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
-nnoremap <silent> <Leader>A :Ag<CR>
-
 
 "------------------------------------------------------------------------------
 " Vim-Go 
@@ -549,8 +547,8 @@ noremap <leader>gl :GoLint<CR>
 "------------------------------------------------------------------------------
 " Vim-Grepper 
 "------------------------------------------------------------------------------
-nnoremap <leader>g :Grepper<cr>
-let g:grepper = { 'next_tool': '<leader>g' }
+"nnoremap <leader>g :Grepper<cr>
+"let g:grepper = { 'next_tool': '<leader>g' }
 
 
 "------------------------------------------------------------------------------
