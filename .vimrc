@@ -99,8 +99,9 @@ set enc=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
 " 文件格式
-set fileformats=unix,dos
+set fileformats=unix,mac,dos
 "set fileformats=unix
+set termencoding=utf-8
 
 " 语言设置
 set langmenu=zh_CN.UTF-8
