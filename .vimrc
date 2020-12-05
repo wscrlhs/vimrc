@@ -108,9 +108,9 @@ set langmenu=zh_CN.UTF-8
 set helplang=cn
 
 " 启动 vim 时折叠代码
-set foldenable
+"set foldenable
 " 启动 vim 时关闭折叠代码
-"set nofoldenable
+set nofoldenable
 " 基于缩进或语法进行代码折叠
 set foldmethod=indent
 "set foldmethod=syntax
@@ -222,6 +222,7 @@ Plug 'chr4/nginx.vim'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+
  
 if executable('ctags')
    Plug 'majutsushi/tagbar'
@@ -501,8 +502,6 @@ endif
 if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
      "nnoremap <silent> <Leader>f :Files<CR>
      "nnoremap <silent> <Leader>b :Buffers<CR>
-     nnoremap <silent> <Leader>rg :Leaderf rg<CR>
-     nnoremap <silent> <Leader>mru :Leaderf mru<CR>
 
      " The_silver_searcher {
      command! -bang -nargs=* Ag
@@ -511,6 +510,15 @@ if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
        \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
        \                 <bang>0)
      nnoremap <silent> <Leader>A :Ag<CR>
+endif
+
+
+"------------------------------------------------------------------------------
+" LeaderF
+"------------------------------------------------------------------------------
+if isdirectory(expand("~/.vim/plugged/LeaderF/"))
+     nnoremap <silent> <Leader>rg :Leaderf rg<CR>
+     nnoremap <silent> <Leader>mru :Leaderf mru<CR>
 endif
 
 "------------------------------------------------------------------------------
