@@ -120,6 +120,7 @@ set foldcolumn =1
 set foldlevel =0
 
 
+
 "------------------------------------------------------------------------------
 " 高级配置 
 "------------------------------------------------------------------------------
@@ -176,6 +177,12 @@ iab @i wscrlhs@gmail.com
 
 " 自启动设置 
 "autocmd vimenter * NERDTree
+
+" ctrl+s 实现保存功能
+nmap <C-S> :w<CR>
+vmap <C-S> <C-C>:w<CR>
+imap <C-S> <Esc>:w<CR>
+
 
 
 "------------------------------------------------------------------------------
@@ -560,21 +567,6 @@ noremap <leader>gl :GoLint<CR>
 "let g:grepper = { 'next_tool': '<leader>g' }
 
 
-"------------------------------------------------------------------------------
-" 防止覆盖,在末尾配置 
-"------------------------------------------------------------------------------
-"add the '$' sign as change command indicator
-set cpoptions+=$
-
-" 显示输入的命令
-set showcmd
-
-" 支持使用鼠标
-set mouse=a
-
-" 打开英语单词的拼写检查 excellent
-set spell spelllang=en_us
-
 
 "------------------------------------------------------------------------------
 " TagBar 
@@ -591,6 +583,29 @@ set spell spelllang=en_us
  nnoremap <leader>gd :Gvdiff!<CR>
  "nnoremap gdh :diffget //2<CR>
  "nnoremap gdl :diffget //3<CR>
+
+
+
+"------------------------------------------------------------------------------
+" 防止覆盖,在末尾配置
+"------------------------------------------------------------------------------
+"add the '$' sign as change command indicator
+set cpoptions+=$
+
+" 显示输入的命令
+set showcmd
+
+" 支持使用鼠标
+set mouse=a
+
+" 打开英语单词的拼写检查 excellent
+set spell spelllang=en_us
+
+" 设置超过80长度提示
+set colorcolumn=121
+
+" so $VIMRUNTIME/syntax/colortest.vim
+hi ColorColumn ctermbg=yellow
 
 
 "------------------------------------------------------------------------------
