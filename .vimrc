@@ -183,6 +183,7 @@ nmap <C-S> :w<CR>
 vmap <C-S> <C-C>:w<CR>
 imap <C-S> <Esc>:w<CR>
 
+filetype plugin on
 
 
 "------------------------------------------------------------------------------
@@ -229,6 +230,8 @@ Plug 'chr4/nginx.vim'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'vimwiki/vimwiki'
+Plug 'itchyny/calendar.vim'
 
  
 if executable('ctags')
@@ -607,6 +610,9 @@ set colorcolumn=121
 " so $VIMRUNTIME/syntax/colortest.vim
 hi ColorColumn ctermbg=yellow
 
+" calendar
+map <F8> :Calendar<cr>
+autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
 
 "------------------------------------------------------------------------------
 " 参考 
