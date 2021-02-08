@@ -50,8 +50,8 @@ set guioptions-=r
 set guioptions-=R
 
 " 禁止显示菜单和工具条
-set guioptions-=m
-set guioptions-=T
+"set guioptions-=m
+"set guioptions-=T
 
 " 总是显示状态栏
 set laststatus=2
@@ -185,6 +185,20 @@ imap <C-S> <Esc>:w<CR>
 
 filetype plugin on
 
+" 剪贴板 
+" 复制和粘贴: `"*y` 和 `"*p` 来进行复制（yank) 和 粘贴（paste)
+" 设置了下面后，可以直接使用y和p
+"set clipboard=unnamed
+" 可视模式下复制到剪贴板
+set clipboard=unnamed,autoselect
+set guioptions+=a
+
+"打开文件时恢复光标位置
+"autocmd BufReadPost *
+"    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+"    \   exe "normal! g`\"" |
+"    \ endif
+
 
 "------------------------------------------------------------------------------
 " 插件管理 
@@ -202,7 +216,7 @@ filetype plugin on
 set rtp+=/usr/local/opt/fzf
 call plug#begin()
 Plug 'VundleVim/Vundle.vim'
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
@@ -222,6 +236,7 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'mbbill/undotree'
 Plug 'fatih/vim-go'
+Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -229,7 +244,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'chr4/nginx.vim'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
 
@@ -482,17 +497,15 @@ endif
 "------------------------------------------------------------------------------
 " set backup
 if has('persistent_undo')
-    " set undo dir
-    set undodir=~/.vimundo/
-
-    " So is persistent undo ...
-    set undofile
-
     " Maximum number of changes that can be undone
-    "set undolevels=1000
+    set undolevels=1000
 
     " Maximum number lines to save for undo on a buffer reload
-    "set undoreload=10000
+    set undoreload=100000
+
+    set undodir=~/.vim/undodir
+    set undofile " Maintain undo history between sessions
+
 endif
 
 if isdirectory(expand("~/.vim/plugged/undotree/"))
@@ -501,8 +514,6 @@ if isdirectory(expand("~/.vim/plugged/undotree/"))
     " If undotree is opened, it is likely one wants to interact with it.
     let g:undotree_SetFocusWhenToggle=1
 
-    set undofile " Maintain undo history between sessions
-    set undodir=~/.vim/undodir
 endif
 
 
@@ -527,8 +538,33 @@ endif
 " LeaderF
 "------------------------------------------------------------------------------
 if isdirectory(expand("~/.vim/plugged/LeaderF/"))
+    " don't show the help in normal mode
+    let g:Lf_HideHelp = 1
+    let g:Lf_UseCache = 0
+    let g:Lf_UseVersionControlTool = 0
+    let g:Lf_IgnoreCurrentBufferName = 1
+    " popup mode
+    let g:Lf_WindowPosition = 'popup'
+    let g:Lf_PreviewInPopup = 1
+    let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+    let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+
+
+     "let g:Lf_ShortcutF = "<leader>ff"
      nnoremap <silent> <Leader>rg :Leaderf rg<CR>
      nnoremap <silent> <Leader>mru :Leaderf mru<CR>
+     noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+     noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+     noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+     noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+
+
+     noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+     noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+     " search visually selected text literally
+     xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+     noremap go :<C-U>Leaderf! rg --recall<CR>
+
 endif
 
 "------------------------------------------------------------------------------
@@ -547,17 +583,18 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-" highlight same variable in view
-let g:go_auto_sameids = 1
-let g:go_list_type = "quickfix"
-let g:go_test_timeout = '10s'
-let g:go_textobj_include_function_doc = 0
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
 let g:go_fmt_experimental = 1
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+" highlight same variable in view
+"let g:go_auto_sameids = 1
+"let g:go_list_type = "quickfix"
+let g:go_test_timeout = '10s'
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " 我自定义的
 noremap <leader>gl :GoLint<CR>
@@ -588,7 +625,6 @@ noremap <leader>gl :GoLint<CR>
  "nnoremap gdl :diffget //3<CR>
 
 
-
 "------------------------------------------------------------------------------
 " 防止覆盖,在末尾配置
 "------------------------------------------------------------------------------
@@ -614,8 +650,31 @@ hi ColorColumn ctermbg=yellow
 map <F8> :Calendar<cr>
 autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
 
+
+"------------------------------------------------------------------------------
+" vim-markdown 
+"------------------------------------------------------------------------------
+"The following commands are useful to open and close folds:
+"
+"zr: reduces fold level throughout the buffer
+"zR: opens all folds
+"zm: increases fold level throughout the buffer
+"zM: folds everything all the way
+"za: open a fold your cursor is on
+"zA: open a fold your cursor is on recursively
+"zc: close a fold your cursor is on
+"zC: close a fold your cursor is on recursively
+
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_json_frontmatter = 1
+
+
+
+
+
+
 "------------------------------------------------------------------------------
 " 参考 
 "------------------------------------------------------------------------------
   " https://www.jianshu.com/p/bb91582317ed
-
