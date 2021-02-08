@@ -50,8 +50,8 @@ set guioptions-=r
 set guioptions-=R
 
 " 禁止显示菜单和工具条
-"set guioptions-=m
-"set guioptions-=T
+set guioptions-=m
+set guioptions-=T
 
 " 总是显示状态栏
 set laststatus=2
@@ -120,24 +120,9 @@ set foldcolumn =1
 set foldlevel =0
 
 
-
 "------------------------------------------------------------------------------
 " 高级配置 
 "------------------------------------------------------------------------------
-" 快速编辑vimrc文件
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" 重新加载vimrc文件
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" 单词两边包围字符
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-nnoremap <leader>< viw<esc>a><esc>hbi<<esc>lel
-nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
-nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
-nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
-nnoremap <leader>** viw<esc>a**<esc>hbi**<esc>lel
-
 " 编码转gbk
 noremap <leader>gbk :e ++enc=gbk<CR>
 noremap <leader>utf :e ++enc=utf-8<CR>
@@ -216,18 +201,14 @@ set guioptions+=a
 set rtp+=/usr/local/opt/fzf
 call plug#begin()
 Plug 'VundleVim/Vundle.vim'
-"Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
@@ -236,19 +217,15 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'mbbill/undotree'
 Plug 'fatih/vim-go'
+" 这个插件需要私人定制 https://keelii.com/2018/08/26/vim-plugin-ultisnips-advanced-tips/
 Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
-Plug 'SirVer/ultisnips'
-Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'chr4/nginx.vim'
-Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
 
- 
 if executable('ctags')
    Plug 'majutsushi/tagbar'
 endif
@@ -287,7 +264,6 @@ if isdirectory(expand("~/.vim/plugged/vim/"))
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
-    "colorscheme dracula
     "colorscheme solarized
     colorscheme gruvbox
 endif
@@ -518,23 +494,6 @@ endif
 
 
 "------------------------------------------------------------------------------
-" Fzf 
-"------------------------------------------------------------------------------
-if isdirectory(expand("~/.vim/plugged/fzf.vim/"))
-     "nnoremap <silent> <Leader>f :Files<CR>
-     "nnoremap <silent> <Leader>b :Buffers<CR>
-
-     " The_silver_searcher {
-     command! -bang -nargs=* Ag
-       \ call fzf#vim#ag(<q-args>,
-       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-       \                 <bang>0)
-     nnoremap <silent> <Leader>A :Ag<CR>
-endif
-
-
-"------------------------------------------------------------------------------
 " LeaderF
 "------------------------------------------------------------------------------
 if isdirectory(expand("~/.vim/plugged/LeaderF/"))
@@ -570,42 +529,34 @@ endif
 "------------------------------------------------------------------------------
 " Vim-Go 
 "------------------------------------------------------------------------------
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
-let g:go_addtags_transform = "camelcase"
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_deadline = "5s"
-let g:go_fmt_experimental = 1
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-" highlight same variable in view
-"let g:go_auto_sameids = 1
-"let g:go_list_type = "quickfix"
-let g:go_test_timeout = '10s'
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-
-" 我自定义的
-noremap <leader>gl :GoLint<CR>
-
-
-"------------------------------------------------------------------------------
-" Vim-Grepper 
-"------------------------------------------------------------------------------
-"nnoremap <leader>g :Grepper<cr>
-"let g:grepper = { 'next_tool': '<leader>g' }
-
+    let g:go_def_mode='gopls'
+    let g:go_info_mode='gopls'
+    let g:go_fmt_command = "goimports"
+    let g:go_fmt_fail_silently = 1
+    let g:go_addtags_transform = "camelcase"
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_functions = 1
+    let g:go_highlight_function_calls = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_extra_types = 1
+    let g:go_highlight_build_constraints = 1
+    
+    "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    let g:go_metalinter_autosave = 1
+    let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+    let g:go_metalinter_deadline = "5s"
+    let g:go_fmt_experimental = 1
+    "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+    
+    " highlight same variable in view
+    "let g:go_auto_sameids = 1
+    "let g:go_list_type = "quickfix"
+    let g:go_test_timeout = '10s'
+    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+    
+    " 我自定义的
+    noremap <leader>gl :GoLint<CR>
 
 
 "------------------------------------------------------------------------------
@@ -617,62 +568,57 @@ noremap <leader>gl :GoLint<CR>
 
 
 "------------------------------------------------------------------------------
+" vim-markdown 
+"------------------------------------------------------------------------------
+    "The following commands are useful to open and close folds:
+    "
+    "zr: reduces fold level throughout the buffer
+    "zR: opens all folds
+    "zm: increases fold level throughout the buffer
+    "zM: folds everything all the way
+    "za: open a fold your cursor is on
+    "zA: open a fold your cursor is on recursively
+    "zc: close a fold your cursor is on
+    "zC: close a fold your cursor is on recursively
+    
+    let g:vim_markdown_folding_style_pythonic = 1
+    let g:vim_markdown_toc_autofit = 1
+    let g:vim_markdown_json_frontmatter = 1
+
+
+"------------------------------------------------------------------------------
 " vim-fugitive 
 "------------------------------------------------------------------------------
- " Fugitive Conflict Resolution
- nnoremap <leader>gd :Gvdiff!<CR>
- "nnoremap gdh :diffget //2<CR>
- "nnoremap gdl :diffget //3<CR>
+    " Fugitive Conflict Resolution
+    nnoremap <leader>gd :Gvdiff!<CR>
+    "nnoremap gdh :diffget //2<CR>
+    "nnoremap gdl :diffget //3<CR>
 
 
 "------------------------------------------------------------------------------
 " 防止覆盖,在末尾配置
 "------------------------------------------------------------------------------
-"add the '$' sign as change command indicator
-set cpoptions+=$
-
-" 显示输入的命令
-set showcmd
-
-" 支持使用鼠标
-set mouse=a
-
-" 打开英语单词的拼写检查 excellent
-set spell spelllang=en_us
-
-" 设置超过80长度提示
-set colorcolumn=121
-
-" so $VIMRUNTIME/syntax/colortest.vim
-hi ColorColumn ctermbg=yellow
-
-" calendar
-map <F8> :Calendar<cr>
-autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
-
-
-"------------------------------------------------------------------------------
-" vim-markdown 
-"------------------------------------------------------------------------------
-"The following commands are useful to open and close folds:
-"
-"zr: reduces fold level throughout the buffer
-"zR: opens all folds
-"zm: increases fold level throughout the buffer
-"zM: folds everything all the way
-"za: open a fold your cursor is on
-"zA: open a fold your cursor is on recursively
-"zc: close a fold your cursor is on
-"zC: close a fold your cursor is on recursively
-
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_json_frontmatter = 1
-
-
-
-
-
+    "add the '$' sign as change command indicator
+    set cpoptions+=$
+    
+    " 显示输入的命令
+    set showcmd
+    
+    " 支持使用鼠标
+    set mouse=a
+    
+    " 打开英语单词的拼写检查 excellent
+    set spell spelllang=en_us
+    
+    " 设置超过80长度提示
+    set colorcolumn=121
+    
+    " so $VIMRUNTIME/syntax/colortest.vim
+    hi ColorColumn ctermbg=yellow
+    
+    " calendar
+    map <F8> :Calendar<cr>
+    autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
 
 "------------------------------------------------------------------------------
 " 参考 
