@@ -225,6 +225,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
+Plug 'dracula/vim'
+Plug 'wscrlhs/vim-snippets'
 
 if executable('ctags')
    Plug 'majutsushi/tagbar'
@@ -593,6 +595,15 @@ endif
     nnoremap <leader>gd :Gvdiff!<CR>
     "nnoremap gdh :diffget //2<CR>
     "nnoremap gdl :diffget //3<CR>
+
+"------------------------------------------------------------------------------
+" vim-snippets
+"------------------------------------------------------------------------------
+    "let g:UltiSnipsExpandTrigger="<leader><space>"
+    let g:UltiSnipsExpandTrigger="<leader><tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsSnippetDirectories=["UltiSnips", "plugged/vim-snippets"]
 
 
 "------------------------------------------------------------------------------
