@@ -544,12 +544,12 @@ endif
     let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
     
-    "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
     let g:go_metalinter_autosave = 1
     let g:go_metalinter_autosave_enabled = ['vet', 'golint']
     let g:go_metalinter_deadline = "5s"
     let g:go_fmt_experimental = 1
-    "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
     
     " highlight same variable in view
     "let g:go_auto_sameids = 1
