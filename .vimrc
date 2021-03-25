@@ -61,6 +61,8 @@ set ruler
 
 " 开启行号显示
 set number
+" 相对展示行号
+set relativenumber
 
 " 高亮显示当前行/列
 set cursorline
@@ -216,7 +218,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'mbbill/undotree'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'AndrewRadev/splitjoin.vim'
 " 这个插件需要私人定制 https://keelii.com/2018/08/26/vim-plugin-ultisnips-advanced-tips/
 Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
@@ -227,6 +230,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
 Plug 'dracula/vim'
 Plug 'wscrlhs/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'enricobacis/vim-airline-clock'
 
 if executable('ctags')
    Plug 'majutsushi/tagbar'
@@ -535,6 +540,7 @@ endif
     let g:go_info_mode='gopls'
     let g:go_fmt_command = "goimports"
     let g:go_fmt_fail_silently = 1
+    let g:go_fmt_autosave = 0
     let g:go_addtags_transform = "camelcase"
     let g:go_highlight_types = 1
     let g:go_highlight_fields = 1
@@ -544,21 +550,33 @@ endif
     let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
     
-    let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
     let g:go_metalinter_autosave = 1
-    let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+    let g:go_metalinter_command = "golangci-lint"
+    "let g:go_metalinter_autosave_enabled = ['vet', 'golint']
     let g:go_metalinter_deadline = "5s"
     let g:go_fmt_experimental = 1
+
+    let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
+    let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
     let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
     
     " highlight same variable in view
-    "let g:go_auto_sameids = 1
-    "let g:go_list_type = "quickfix"
+    let g:go_auto_sameids = 1
+    let g:go_list_type = "quickfix"
     let g:go_test_timeout = '10s'
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
+    map <C-n> :cnext<CR>
+    map <C-m> :cprevious<CR>
+    nnoremap <leader>a :cclose<CR>
+    autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
     
     " 我自定义的
     noremap <leader>gl :GoLint<CR>
+    noremap <leader>gf :GoFmt<CR> 
+    
 
 
 "------------------------------------------------------------------------------
