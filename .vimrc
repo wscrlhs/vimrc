@@ -567,8 +567,6 @@ endif
     let g:go_test_timeout = '10s'
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
-    map <C-n> :cnext<CR>
-    map <C-m> :cprevious<CR>
     nnoremap <leader>a :cclose<CR>
     autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
