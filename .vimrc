@@ -38,7 +38,11 @@ set ignorecase
 set nocompatible
 
 " vim 自身命令行模式智能补全
-set wildmenu
+set wildmenu wildmode=full
+" 利用通配符进行缓冲区跳转
+set wildchar=<Tab> wildcharm=<C-Z>
+" 设置快捷键
+noremap <c-n> :b <c-z>
 
 " 禁止光标闪烁
 set gcr=a:block-blinkon0
@@ -133,10 +137,10 @@ noremap <leader>utf :e ++enc=utf-8<CR>
 "noremap <silent>  <Leader>a  gg v G
 
 " 多窗口操作
-noremap <C-J> <C-W>j<C-W>_
-noremap <C-K> <C-W>k<C-W>_
-noremap <C-L> <C-W>l<C-W>_
-noremap <C-H> <C-W>h<C-W>_
+noremap <C-J> <C-W>j<C-W>
+noremap <C-K> <C-W>k<C-W>
+noremap <C-L> <C-W>l<C-W>
+noremap <C-H> <C-W>h<C-W>
 
 " For clever completion with the :find command
 set path+=**
@@ -535,6 +539,33 @@ endif
 
 "------------------------------------------------------------------------------
 " Vim-Go 
+" :GoRun :GoBuild :GoInstall
+"
+" :GoDef          # goto definition of object under cursor
+" gd              # also has the same effect
+" Ctrl-O / Ctrl-I # hop back to your source file/return to definition
+"
+" :GoDoc          # opens up a side window for quick documentationn
+" K               # also has the same effect
+"
+"
+" :GoTest         # run every *_test.go file and report results
+" :GoTestFunc     # or just test the function under your cursor
+" :GoCoverage     # check your test coverage
+" :GoAlternate	# switch bewteen your test case and implementation
+"
+" :GoImport       # manage and name your imports
+" :GoImportAs
+" :GoDrop
+"
+" :GoRename       # precise renaming of identifiers
+"
+" :GoLint         # lint your code
+" :GoVer
+" :GoErrCheck
+"
+" :GoAddTags      # manage your tags
+" :GoRemoveTags
 "------------------------------------------------------------------------------
     let g:go_def_mode='gopls'
     let g:go_info_mode='gopls'
@@ -549,6 +580,9 @@ endif
     let g:go_highlight_operators = 1
     let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
+    " Automatically get signature/type info for object under cursor
+    let g:go_auto_type_info = 1
+
     
     "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
     let g:go_metalinter_autosave = 1
