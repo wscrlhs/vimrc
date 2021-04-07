@@ -191,6 +191,16 @@ set guioptions+=a
 "    \ endif
 
 
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+
+
+set history=10000
+
+" %% 轻松展开当前文件所在的目录
+cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+
+
 "------------------------------------------------------------------------------
 " 插件管理 
 " PlugInstall [name ...] [#threads]	Install plugins
@@ -339,6 +349,7 @@ if isdirectory(expand("~/.vim/plugged/ctrlp.vim/"))
     let g:ctrlp_working_path_mode = 'ra'
     nnoremap <silent> <C-p> :CtrlP<CR>
     nnoremap <silent> <C-m> :CtrlPMRU<CR>
+    nnoremap <silent> <C-b> :CtrlPBuffer<CR>
     let g:ctrlp_custom_ignore = {
                 \ 'dir':  '\.git$\|\.hg$\|\.svn$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
@@ -528,9 +539,6 @@ if isdirectory(expand("~/.vim/plugged/LeaderF/"))
      noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
      noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
-
-     noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
-     noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
      " search visually selected text literally
      xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
      noremap go :<C-U>Leaderf! rg --recall<CR>
