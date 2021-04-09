@@ -30,6 +30,8 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " 开启实时搜索功能
 set incsearch
+" 高亮显示搜索结果
+set hlsearch
 
 " 搜索时大小写不敏感
 set ignorecase
@@ -72,8 +74,6 @@ set relativenumber
 set cursorline
 set cursorcolumn
 
-" 高亮显示搜索结果
-set hlsearch
 
 " 禁止折行
 set nowrap
@@ -153,13 +153,6 @@ if WINDOWS()
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
-" Mac vim 多行复制
-if OSX()
-   "vmap y :w !pbcopy<CR><CR>
-   "nmap yy :.w !pbcopy<CR><CR>
-   noremap <leader>y :w !pbcopy<CR><CR>
-endif
-
 " 缩写 ,ctrl-v取消效果
 iab @i wscrlhs@gmail.com
 
@@ -179,7 +172,7 @@ filetype plugin on
 " 剪贴板 
 " 复制和粘贴: `"*y` 和 `"*p` 来进行复制（yank) 和 粘贴（paste)
 " 设置了下面后，可以直接使用y和p
-"set clipboard=unnamed
+" set clipboard=unnamed
 " 可视模式下复制到剪贴板
 set clipboard=unnamed,autoselect
 set guioptions+=a
@@ -190,10 +183,8 @@ set guioptions+=a
 "    \   exe "normal! g`\"" |
 "    \ endif
 
-
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
-
 
 set history=10000
 
@@ -225,12 +216,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'mbbill/undotree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'AndrewRadev/splitjoin.vim'
@@ -246,6 +237,10 @@ Plug 'dracula/vim'
 Plug 'wscrlhs/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'enricobacis/vim-airline-clock'
+
+" not use anmore
+"Plug 'haya14busa/incsearch-fuzzy.vim'
+
 
 if executable('ctags')
    Plug 'majutsushi/tagbar'
@@ -393,6 +388,14 @@ endif
 " Incsearch 
 "------------------------------------------------------------------------------
 if isdirectory(expand("~/.vim/plugged/incsearch.vim/"))
+    let g:incsearch#auto_nohlsearch = 1
+    map n  <Plug>(incsearch-nohl-n)
+    map N  <Plug>(incsearch-nohl-N)
+    map *  <Plug>(incsearch-nohl-*)
+    map #  <Plug>(incsearch-nohl-#)
+    map g* <Plug>(incsearch-nohl-g*)
+    map g# <Plug>(incsearch-nohl-g#)
+
     " You can use other keymappings like <C-l> instead of <CR> if you want to
     " use these mappings as default search and somtimes want to move cursor with
     " EasyMotion.
@@ -405,24 +408,22 @@ if isdirectory(expand("~/.vim/plugged/incsearch.vim/"))
                     \   'is_expr': 0
                     \ }), get(a:, 1, {}))
     endfunction
-
     noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
     noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
     noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
 
-    function! s:config_easyfuzzymotion(...) abort
-        return extend(copy({
-                    \   'converters': [incsearch#config#fuzzyword#converter()],
-                    \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-                    \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-                    \   'is_expr': 0,
-                    \   'is_stay': 1
-                    \ }), get(a:, 1, {}))
-    endfunction
-
-    noremap <silent><expr> <Space>/  incsearch#go(<SID>config_easyfuzzymotion())
-    noremap <silent><expr> <Space>?  incsearch#go(<SID>config_easyfuzzymotion({'command': '?'}))
-    noremap <silent><expr> <Space>g/ incsearch#go(<SID>config_easyfuzzymotion({'is_stay': 1}))
+    "function! s:config_easyfuzzymotion(...) abort
+    "    return extend(copy({
+    "                \   'converters': [incsearch#config#fuzzyword#converter()],
+    "                \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+    "                \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+    "                \   'is_expr': 0,
+    "                \   'is_stay': 1
+    "                \ }), get(a:, 1, {}))
+    "endfunction
+    "noremap <silent><expr> <Space>/  incsearch#go(<SID>config_easyfuzzymotion())
+    "noremap <silent><expr> <Space>?  incsearch#go(<SID>config_easyfuzzymotion({'command': '?'}))
+    "noremap <silent><expr> <Space>g/ incsearch#go(<SID>config_easyfuzzymotion({'is_stay': 1}))
 endif
 
 
