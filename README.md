@@ -237,6 +237,20 @@
 
 <br>[⬆ Back to top](#table-of-contents)
 
+
+### 自动补全
+| 快捷键   | 功能说明                         |
+| -------- | ----------                       |
+| `]s`     | 跳到下一处拼写错误               |
+| `[s`     | 跳到上一处拼写错误               |
+| `z=`     | 为当前单词提供更正建议           |
+| `zg`     | 把当前单词添加到拼写文件中       |
+| `zw`     | 把当前单词从拼写文件中删除       |
+| `zug`    | 撤销针对当前单词的 zg 或 zw 命令 |
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ## Vimscript
 ### 基础
 | 快捷键                     | 功能说明                   |
@@ -248,6 +262,7 @@
 | `*noremap`                 | 非递归映射(与`*map`系列的命令对应)  |
 
 <br>[⬆ Back to top](#table-of-contents)
+
 
 ## 插件
 ### [vundle](https://github.com/vundlevim/vundle.vim)

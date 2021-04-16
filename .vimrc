@@ -203,6 +203,16 @@ function! s:VSetSearch()
 endfunction
 
 
+"if has('spell')
+"  setglobal spelllang=en_us
+"  setglobal spellfile=~/.vim/spell/en.utf-8.add
+"  "if &rtp =~# 'Dropbox.Code.vim'
+"  "  setglobal spellfile^=~/Dropbox/Code/vim/spell/en.utf-8.add
+"  "endif
+"  let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
+"  autocmd FileType help if &buftype ==# 'help' | setlocal nospell | endif
+"endif
+
 "------------------------------------------------------------------------------
 " 插件管理 
 " PlugInstall [name ...] [#threads]	Install plugins
@@ -248,6 +258,9 @@ Plug 'dracula/vim'
 Plug 'wscrlhs/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'enricobacis/vim-airline-clock'
+
+" 04-16 add
+Plug 'ervandew/supertab'
 
 " not use anmore
 "Plug 'haya14busa/incsearch-fuzzy.vim'
