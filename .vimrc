@@ -230,8 +230,8 @@ set rtp+=/usr/local/opt/fzf
 call plug#begin()
 Plug 'VundleVim/Vundle.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -261,6 +261,8 @@ Plug 'enricobacis/vim-airline-clock'
 
 " 04-16 add
 Plug 'ervandew/supertab'
+Plug 'rhysd/git-messenger.vim'
+Plug 'dstein64/vim-startuptime'
 
 " not use anmore
 "Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -713,6 +715,8 @@ endif
     " calendar
     map <F8> :Calendar<cr>
     autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
+    
+    nmap <Leader>gm <Plug>(git-messenger)
 
 "------------------------------------------------------------------------------
 " 参考 
