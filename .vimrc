@@ -643,6 +643,7 @@ endif
     " 我自定义的
     noremap <leader>gl :GoLint<CR>
     noremap <leader>gf :GoFmt<CR> 
+    noremap <leader>gml :GoMetaLinter<CR>
     
 
 
